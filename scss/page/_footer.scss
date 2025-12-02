@@ -8,94 +8,109 @@
   @include mq(md) {
     padding: rem(40) 0 rem(20);
   }
+}
 
-  &__container {
-    width: 100%;
-    max-width: $inner;
-    margin: 0 auto;
-    padding: 0 $padding-pc;
+.footer__container {
+  width: 100%;
+  max-width: $inner;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
 
-    @include mq(md) {
-      padding: 0 $padding-sp;
-    }
+  @include mq(md) {
+    padding: 0 $padding-sp;
   }
+}
 
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: rem(40);
-    padding-bottom: rem(40);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: rem(40);
+  padding-bottom: rem(40);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-    @include mq(md) {
-      flex-direction: column;
-      gap: rem(30);
-      margin-bottom: rem(30);
-      padding-bottom: rem(30);
-    }
-  }
-
-  &__logo {
-    a {
-      font-size: rem(24);
-      font-weight: $bold;
-      color: $color-white;
-      font-family: $second-font-family;
-      letter-spacing: 0.05em;
-
-      @include mq(md) {
-        font-size: rem(20);
-      }
-    }
-  }
-
-  &__nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-
-    @include mq(md) {
-      justify-content: flex-start;
-    }
-  }
-
-  &__menu {
-    display: flex;
+  @include mq(md) {
+    flex-direction: column;
     gap: rem(30);
-    flex-wrap: wrap;
-
-    @include mq(md) {
-      flex-direction: column;
-      gap: rem(15);
-    }
-
-    li {
-      list-style: none;
-    }
-
-    a {
-      font-size: rem(14);
-      color: $color-white;
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
+    margin-bottom: rem(30);
+    padding-bottom: rem(30);
   }
+}
 
-  &__copy {
-    text-align: center;
+.footer__logo a {
+  font-size: rem(24);
+  font-weight: $bold;
+  color: $color-white;
+  font-family: $second-font-family;
+  letter-spacing: 0.05em;
 
-    p {
-      font-size: rem(14);
-      opacity: 0.7;
+  @include mq(md) {
+    font-size: rem(20);
+  }
+}
 
-      @include mq(md) {
-        font-size: rem(12);
-      }
-    }
+// カスタムロゴ用のスタイル
+.footer__logo .custom-logo-link {
+  display: block;
+  line-height: 1;
+}
+
+.footer__logo .custom-logo {
+  max-height: 50px;
+  width: auto;
+  height: auto;
+  filter: brightness(0) invert(1); // 白色に変換
+
+  @include mq(md) {
+    max-height: 40px;
+  }
+}
+
+.footer__nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+
+  @include mq(md) {
+    justify-content: flex-start;
+  }
+}
+
+.footer__menu {
+  display: flex;
+  gap: rem(30);
+  flex-wrap: wrap;
+
+  @include mq(md) {
+    flex-direction: column;
+    gap: rem(15);
+  }
+}
+
+.footer__menu li {
+  list-style: none;
+}
+
+.footer__menu a {
+  font-size: rem(14);
+  color: $color-white;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer__menu a:hover {
+  opacity: 1;
+}
+
+.footer__copy {
+  text-align: center;
+}
+
+.footer__copy p {
+  font-size: rem(14);
+  opacity: 0.7;
+
+  @include mq(md) {
+    font-size: rem(12);
   }
 }

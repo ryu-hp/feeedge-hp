@@ -9,100 +9,251 @@
   background-color: $color-white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+}
 
-  &__container {
-    width: 100%;
-    max-width: $inner;
-    margin: 0 auto;
-    padding: 0 $padding-pc;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
+.header__container {
+  width: 100%;
+  max-width: $inner;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
 
-    @include mq(md) {
-      padding: 0 $padding-sp;
-      height: 60px;
-    }
+  @include mq(md) {
+    padding: 0 $padding-sp;
+    height: 60px;
   }
+}
 
-  &__logo {
-    a {
-      font-size: rem(24);
-      font-weight: $bold;
-      color: $color-theme;
-      font-family: $second-font-family;
-      letter-spacing: 0.05em;
+.header__logo {
+  max-width: 197px;
+}
 
-      @include mq(md) {
-        font-size: rem(20);
-      }
-    }
+.header__logo a {
+  font-size: rem(24);
+  font-weight: $bold;
+  color: $color-theme;
+  font-family: $second-font-family;
+  letter-spacing: 0.05em;
+
+  @include mq(md) {
+    font-size: rem(20);
   }
+}
 
-  &__nav {
-    @include mq(md) {
-      display: none;
-    }
+// カスタムロゴ用のスタイル
+.header__logo .custom-logo-link {
+  display: block;
+  line-height: 1;
+}
+
+.header__logo .custom-logo {
+  max-height: 50px;
+  width: auto;
+  height: auto;
+
+  @include mq(md) {
+    max-height: 40px;
   }
+}
 
-  &__menu {
-    display: flex;
-    align-items: center;
-    gap: rem(40);
-
-    li {
-      list-style: none;
-    }
-
-    a {
-      font-size: rem(16);
-      font-weight: $normal;
-      color: $color-main_gray;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: $color-theme;
-      }
-    }
-  }
-
-  &__toggle {
+.header__nav {
+  @include mq(md) {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-
-    @include mq(md) {
-      display: flex;
-    }
-
-    span {
-      display: block;
-      width: 25px;
-      height: 2px;
-      background-color: $color-theme;
-      transition: all 0.3s ease;
-    }
-
-    &.is-active {
-      span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      span:nth-child(2) {
-        opacity: 0;
-      }
-      span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-    }
   }
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: rem(40);
+}
+
+.header__menu li {
+  list-style: none;
+}
+
+.header__menu a {
+  font-size: rem(16);
+  font-weight: $bold;
+  color: $color-main_gray;
+  transition: color 0.3s ease;
+}
+
+.header__menu a:hover {
+  color: $color-theme;
+}
+
+// 外部リンク（異なるドメイン）のスタイル
+.header__menu .external-link a {
+  position: relative;
+  padding-right: rem(22);
+}
+
+.header__menu .external-link a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url('../image/site-change-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: rem(6);
+}
+
+// お問い合わせリンクをボタンスタイルに
+.header__menu .contact-link a {
+  display: inline-block;
+  padding: rem(10) rem(24);
+  background: $gradient-freedge;
+  color: $color-white !important;
+  border-radius: 4px;
+  font-weight: $bold;
+  transition: all 0.3s ease;
+}
+
+.header__menu .contact-link a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 92, 180, 0.3);
+}
+
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+
+  @include mq(md) {
+    display: flex;
+  }
+}
+
+.header__toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: $color-theme;
+  transition: all 0.3s ease;
+}
+
+.header__toggle.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 // スクロール時のヘッダースタイル
 body.is-scrolled .header {
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+// モバイルメニュー
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: $color-white;
+  z-index: 99;
+  overflow-y: auto;
+  padding: rem(30) rem(20);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-menu li:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: rem(16) 0;
+  font-size: rem(16);
+  color: $color-main_gray;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: $color-theme;
+}
+
+// 外部リンク（異なるドメイン）のスタイル
+.mobile-menu .external-link a {
+  position: relative;
+  padding-right: rem(24);
+}
+
+.mobile-menu .external-link a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url('../image/site-change-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// お問い合わせリンクをボタンスタイルに
+.mobile-menu .contact-link {
+  margin-top: rem(20);
+  border-bottom: none;
+}
+
+.mobile-menu .contact-link a {
+  display: block;
+  text-align: center;
+  padding: rem(14) rem(24);
+  background-color: $color-theme;
+  color: $color-white !important;
+  border-radius: 50px;
+  font-weight: $bold;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu .contact-link a:hover {
+  background-color: darken($color-theme, 10%);
+}
+
+// メニューが開いている時のbodyスクロール制御
+body.menu-open .mobile-menu {
+  transform: translateX(0);
 }

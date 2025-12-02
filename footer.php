@@ -2,9 +2,17 @@
   <div class="footer__container">
     <div class="footer__content">
       <div class="footer__logo">
-        <a href="<?php echo esc_url(home_url('/')); ?>">
-          <?php bloginfo('name'); ?>
-        </a>
+        <?php
+        if (has_custom_logo()) {
+          the_custom_logo();
+        } else {
+          ?>
+          <a href="<?php echo esc_url(home_url('/')); ?>">
+            <?php bloginfo('name'); ?>
+          </a>
+          <?php
+        }
+        ?>
       </div>
       
       <nav class="footer__nav">

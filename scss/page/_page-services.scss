@@ -1,136 +1,136 @@
 @use "../global" as *;
 
-// SERVICES（事業内容）ページ
+// SERVICES(事業内容)ページ
 .page-services {
   padding-top: 80px;
 
   @include mq(md) {
     padding-top: 60px;
   }
+}
 
-  // 3つの事業領域 セクション
-  .services-intro {
-    background-color: $color-white;
+// 3つの事業領域 セクション
+.services-intro {
+  background-color: $color-white;
+}
 
-    &__container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 $padding-pc;
+.services-intro__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
 
-      @include mq(md) {
-        padding: 0 $padding-sp;
-      }
-    }
-
-    &__content {
-      text-align: center;
-    }
-
-    &__text {
-      font-size: rem(18);
-      line-height: 1.8;
-      color: $color-main_gray;
-
-      @include mq(md) {
-        font-size: rem(16);
-      }
-    }
+  @include mq(md) {
+    padding: 0 $padding-sp;
   }
+}
 
-  // サービス詳細（タブ切り替え）セクション
-  .services-detail {
-    background-color: $color-bg_gray;
+.services-intro__content {
+  text-align: center;
+}
 
-    &__container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 $padding-pc;
+.services-intro__text {
+  font-size: rem(18);
+  line-height: 1.8;
+  color: $color-main_gray;
 
-      @include mq(md) {
-        padding: 0 $padding-sp;
-      }
-    }
+  @include mq(md) {
+    font-size: rem(16);
+  }
+}
 
-    &__tabs {
-      display: flex;
-      justify-content: center;
-      gap: rem(20);
-      margin-bottom: rem(40);
+// サービス詳細(タブ切り替え)セクション
+.services-detail {
+  background-color: $color-bg;
+}
 
-      @include mq(md) {
-        flex-direction: column;
-        gap: rem(12);
-        margin-bottom: rem(30);
-      }
-    }
+.services-detail__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
 
-    &__tab {
-      padding: rem(12) rem(32);
-      background-color: $color-white;
-      color: $color-main_gray;
-      font-size: rem(16);
-      font-weight: $normal;
-      border: 2px solid transparent;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+  @include mq(md) {
+    padding: 0 $padding-sp;
+  }
+}
 
-      @include mq(md) {
-        padding: rem(10) rem(24);
-        font-size: rem(14);
-      }
+.services-detail__tabs {
+  display: flex;
+  justify-content: center;
+  gap: rem(20);
+  margin-bottom: rem(40);
 
-      &.active,
-      &:hover {
-        background-color: $color-theme;
-        color: $color-white;
-        border-color: $color-theme;
-      }
-    }
+  @include mq(md) {
+    flex-direction: column;
+    gap: rem(12);
+    margin-bottom: rem(30);
+  }
+}
 
-    &__content {
-      position: relative;
-      min-height: 300px;
+.services-detail__tab {
+  padding: rem(12) rem(32);
+  background-color: $color-white;
+  color: $color-main_gray;
+  font-size: rem(16);
+  font-weight: $normal;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
-      @include mq(md) {
-        min-height: 250px;
-      }
-    }
+  @include mq(md) {
+    padding: rem(10) rem(24);
+    font-size: rem(14);
+  }
+}
 
-    &__panel {
-      display: none;
-      animation: fadeIn 0.3s ease;
+.services-detail__tab.active,
+.services-detail__tab:hover {
+  background-color: $color-theme;
+  color: $color-white;
+  border-color: $color-theme;
+}
 
-      &.active {
-        display: block;
-      }
+.services-detail__content {
+  position: relative;
+  min-height: 300px;
 
-      h3 {
-        font-size: rem(24);
-        font-weight: $bold;
-        color: $color-theme;
-        margin-bottom: rem(20);
-        text-align: center;
+  @include mq(md) {
+    min-height: 250px;
+  }
+}
 
-        @include mq(md) {
-          font-size: rem(20);
-          margin-bottom: rem(16);
-        }
-      }
+.services-detail__panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
 
-      p {
-        font-size: rem(16);
-        line-height: 1.8;
-        color: $color-main_gray;
-        text-align: center;
+.services-detail__panel.active {
+  display: block;
+}
 
-        @include mq(md) {
-          font-size: rem(14);
-        }
-      }
-    }
+.services-detail__panel h3 {
+  font-size: rem(24);
+  font-weight: $bold;
+  color: $color-theme;
+  margin-bottom: rem(20);
+  text-align: center;
+
+  @include mq(md) {
+    font-size: rem(20);
+    margin-bottom: rem(16);
+  }
+}
+
+.services-detail__panel p {
+  font-size: rem(16);
+  line-height: 1.8;
+  color: $color-main_gray;
+  text-align: center;
+
+  @include mq(md) {
+    font-size: rem(14);
   }
 }
 

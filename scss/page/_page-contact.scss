@@ -1,119 +1,121 @@
 @use "../global" as *;
 
-// CONTACT（お問い合わせ）ページ
+// CONTACT(お問い合わせ)ページ
 .page-contact {
   padding-top: 80px;
 
   @include mq(md) {
     padding-top: 60px;
   }
+}
 
-  // お問い合わせフォーム セクション
-  .contact-form {
-    background-color: $color-white;
+// お問い合わせフォーム セクション
+.contact-form {
+  background-color: $color-white;
+}
 
-    &__container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 $padding-pc;
+.contact-form__container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
 
-      @include mq(md) {
-        padding: 0 $padding-sp;
-      }
-    }
+  @include mq(md) {
+    padding: 0 $padding-sp;
+  }
+}
 
-    &__content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
+.contact-form__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-    &__form {
-      .form-group {
-        margin-bottom: rem(30);
+.contact-form__form .form-group {
+  margin-bottom: rem(30);
 
-        @include mq(md) {
-          margin-bottom: rem(24);
-        }
+  @include mq(md) {
+    margin-bottom: rem(24);
+  }
+}
 
-        label {
-          display: block;
-          font-size: rem(16);
-          font-weight: $bold;
-          color: $color-main_gray;
-          margin-bottom: rem(8);
+.contact-form__form .form-group label {
+  display: block;
+  font-size: rem(16);
+  font-weight: $bold;
+  color: $color-main_gray;
+  margin-bottom: rem(8);
 
-          @include mq(md) {
-            font-size: rem(14);
-          }
+  @include mq(md) {
+    font-size: rem(14);
+  }
+}
 
-          .required {
-            display: inline-block;
-            margin-left: rem(8);
-            padding: rem(2) rem(8);
-            background-color: $color-red;
-            color: $color-white;
-            font-size: rem(12);
-            border-radius: 3px;
-            font-weight: $normal;
+.contact-form__form .form-group label .required {
+  display: inline-block;
+  margin-left: rem(8);
+  padding: rem(2) rem(8);
+  background-color: $color-red;
+  color: $color-white;
+  font-size: rem(12);
+  border-radius: 3px;
+  font-weight: $normal;
 
-            @include mq(md) {
-              font-size: rem(10);
-              padding: rem(2) rem(6);
-            }
-          }
-        }
+  @include mq(md) {
+    font-size: rem(10);
+    padding: rem(2) rem(6);
+  }
+}
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-          width: 100%;
-          padding: rem(12) rem(16);
-          font-size: rem(16);
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          background-color: $color-white;
-          transition: border-color 0.3s ease;
+.contact-form__form .form-group input[type="text"],
+.contact-form__form .form-group input[type="email"],
+.contact-form__form .form-group textarea {
+  width: 100%;
+  padding: rem(12) rem(16);
+  font-size: rem(16);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: $color-white;
+  transition: border-color 0.3s ease;
 
-          @include mq(md) {
-            padding: rem(10) rem(14);
-            font-size: rem(14);
-          }
+  @include mq(md) {
+    padding: rem(10) rem(14);
+    font-size: rem(14);
+  }
+}
 
-          &:focus {
-            outline: none;
-            border-color: $color-theme;
-          }
+.contact-form__form .form-group input[type="text"]:focus,
+.contact-form__form .form-group input[type="email"]:focus,
+.contact-form__form .form-group textarea:focus {
+  outline: none;
+  border-color: $color-theme;
+}
 
-          &::placeholder {
-            color: #999;
-          }
-        }
+.contact-form__form .form-group input[type="text"]::placeholder,
+.contact-form__form .form-group input[type="email"]::placeholder,
+.contact-form__form .form-group textarea::placeholder {
+  color: #999;
+}
 
-        textarea {
-          resize: vertical;
-          min-height: 150px;
-          font-family: inherit;
-        }
-      }
+.contact-form__form .form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+  font-family: inherit;
+}
 
-      .form-submit {
-        text-align: center;
-        margin-top: rem(40);
+.contact-form__form .form-submit {
+  text-align: center;
+  margin-top: rem(40);
 
-        @include mq(md) {
-          margin-top: rem(32);
-        }
+  @include mq(md) {
+    margin-top: rem(32);
+  }
+}
 
-        .button {
-          min-width: 200px;
-          cursor: pointer;
+.contact-form__form .form-submit .button {
+  min-width: 200px;
+  cursor: pointer;
 
-          @include mq(md) {
-            min-width: 180px;
-          }
-        }
-      }
-    }
+  @include mq(md) {
+    min-width: 180px;
   }
 }

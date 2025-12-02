@@ -1,121 +1,121 @@
 @use "../global" as *;
 
-// PHILOSOPHY（企業理念）ページ
+// PHILOSOPHY(企業理念)ページ
 .page-philosophy {
   padding-top: 80px;
 
   @include mq(md) {
     padding-top: 60px;
   }
+}
 
-  // MISSION セクション
-  .mission {
-    background-color: $color-white;
+// MISSION セクション
+.mission {
+  background-color: $color-white;
+}
 
-    &__container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 $padding-pc;
+.mission__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
 
-      @include mq(md) {
-        padding: 0 $padding-sp;
-      }
-    }
-
-    &__content {
-      text-align: center;
-    }
-
-    &__text {
-      font-size: rem(18);
-      line-height: 2;
-      color: $color-main_gray;
-
-      @include mq(md) {
-        font-size: rem(16);
-        line-height: 1.9;
-      }
-    }
+  @include mq(md) {
+    padding: 0 $padding-sp;
   }
+}
 
-  // VISION セクション
-  .vision {
-    background-color: $color-bg_gray;
+.mission__content {
+  text-align: center;
+}
 
-    &__container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 $padding-pc;
+.mission__text {
+  font-size: rem(18);
+  line-height: 2;
+  color: $color-main_gray;
 
-      @include mq(md) {
-        padding: 0 $padding-sp;
-      }
-    }
-
-    &__content {
-      text-align: center;
-    }
-
-    &__text {
-      font-size: rem(18);
-      line-height: 2;
-      color: $color-main_gray;
-
-      @include mq(md) {
-        font-size: rem(16);
-        line-height: 1.9;
-      }
-    }
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: 1.9;
   }
+}
 
-  // VALUE セクション
-  .value {
-    background-color: $color-white;
+// VISION セクション
+.vision {
+  background-color: $color-bg;
+}
 
-    &__container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 $padding-pc;
+.vision__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
 
-      @include mq(md) {
-        padding: 0 $padding-sp;
-      }
-    }
-
-    &__content {
-      text-align: left;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    &__text {
-      font-size: rem(16);
-      line-height: 2;
-      color: $color-main_gray;
-
-      @include mq(md) {
-        font-size: rem(14);
-        line-height: 1.9;
-      }
-
-      strong {
-        color: $color-theme;
-        font-size: rem(18);
-        display: block;
-        margin-top: rem(20);
-
-        @include mq(md) {
-          font-size: rem(16);
-          margin-top: rem(16);
-        }
-
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-    }
+  @include mq(md) {
+    padding: 0 $padding-sp;
   }
+}
+
+.vision__content {
+  text-align: center;
+}
+
+.vision__text {
+  font-size: rem(18);
+  line-height: 2;
+  color: $color-main_gray;
+
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: 1.9;
+  }
+}
+
+// VALUE セクション
+.value {
+  background-color: $color-white;
+}
+
+.value__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $padding-pc;
+
+  @include mq(md) {
+    padding: 0 $padding-sp;
+  }
+}
+
+.value__content {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.value__text {
+  font-size: rem(16);
+  line-height: 2;
+  color: $color-main_gray;
+
+  @include mq(md) {
+    font-size: rem(14);
+    line-height: 1.9;
+  }
+}
+
+.value__text strong {
+  color: $color-theme;
+  font-size: rem(18);
+  display: block;
+  margin-top: rem(20);
+
+  @include mq(md) {
+    font-size: rem(16);
+    margin-top: rem(16);
+  }
+}
+
+.value__text strong:first-child {
+  margin-top: 0;
 }

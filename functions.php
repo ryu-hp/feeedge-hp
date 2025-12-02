@@ -24,6 +24,14 @@ function freedge_setup() {
     'caption'
   ));
   
+  // カスタムロゴのサポート
+  add_theme_support('custom-logo', array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+  ));
+  
   // ナビゲーションメニューの登録
   register_nav_menus(array(
     'header-menu' => 'ヘッダーメニュー',
@@ -72,3 +80,45 @@ function freedge_widgets_init() {
   ));
 }
 add_action('widgets_init', 'freedge_widgets_init');
+
+// ナビゲーションメニューにカスタムクラスを追加
+function freedge_nav_menu_css_class($classes, $item, $args, $depth) {
+  // 現在のサイトのドメインを取得
+  $current_domain = parse_url(home_url(), PHP_URL_HOST);
+  
+  // メニューアイテムのURLを取得
+  $item_url = $item->url;
+  $item_domain = parse_url($item_url, PHP_URL_HOST);
+  
+  // 外部リンク（異なるドメイン）の場合
+  if ($item_domain && $item_domain !== $current_domain) {
+    $classes[] = 'external-link';
+  }
+  
+  // /contact/ ページの場合
+  if (strpos($item_url, '/contact') !== false) {
+    $classes[] = 'contact-link';
+  }
+  
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'freedge_nav_menu_css_class', 10, 4);
+
+// ナビゲーションメニューのリンクに外部リンクアイコンを追加
+function freedge_nav_menu_link_attributes($atts, $item, $args, $depth) {
+  // 現在のサイトのドメインを取得
+  $current_domain = parse_url(home_url(), PHP_URL_HOST);
+  
+  // メニューアイテムのURLを取得
+  $item_url = $item->url;
+  $item_domain = parse_url($item_url, PHP_URL_HOST);
+  
+  // 外部リンク（異なるドメイン）の場合、新しいタブで開く
+  if ($item_domain && $item_domain !== $current_domain) {
+    $atts['target'] = '_blank';
+    $atts['rel'] = 'noopener noreferrer';
+  }
+  
+  return $atts;
+}
+add_filter('nav_menu_link_attributes', 'freedge_nav_menu_link_attributes', 10, 4);

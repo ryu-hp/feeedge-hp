@@ -10,31 +10,27 @@ html {
 }
 
 body {
-  background-color: $color-white;
+  background-color: $color-bg;
   font-family: $base-font-family;
-  color: $color-main_gray;
-  line-height: 1.6;
-  padding-top: 80px;
-
-  @include mq(md) {
-    padding-top: 60px;
-  }
+  color: $color-black;
+  line-height: calc(36 / 16);
+  letter-spacing: -0.02em;
 }
 
 img {
   width: 100%;
   height: auto;
-  vertical-align: middle;
+  display: block;
 }
 
 a {
   text-decoration: none;
   color: inherit;
   transition: opacity 0.3s ease;
+}
 
-  &:hover {
-    opacity: 0.8;
-  }
+a:hover {
+  opacity: 0.8;
 }
 
 main {
@@ -78,11 +74,11 @@ main {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 // メニューが開いている時のbodyスクロール制御
@@ -92,4 +88,9 @@ body.menu-open {
   @include mq(md) {
     overflow: hidden;
   }
+}
+
+
+.color-theme {
+  color: $color-theme;
 }

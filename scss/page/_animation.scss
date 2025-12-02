@@ -6,10 +6,10 @@
   visibility: hidden;
   transform: translateY(rem(24));
   transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
 
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+.js-fadeInUp.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }

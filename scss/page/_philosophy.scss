@@ -3,37 +3,85 @@
 // PHILOSOPHY（企業理念）セクション
 .philosophy {
   background-color: $color-white;
+  position: relative;
+  z-index: 1;
+}
+.philosophy::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%,  transparent 25%, #F3F7FF 100%);
+  z-index: -1;
+}
 
-  &__container {
-    width: 100%;
-    max-width: $inner;
-    margin: 0 auto;
-    padding: 0 $padding-pc;
-
-    @include mq(md) {
-      padding: 0 $padding-sp;
-    }
+.philosophy__columns {
+  display: flex;
+  justify-content: space-between;
+  gap: rem(40);
+  @include mq(md) {
+    flex-direction: column-reverse;
+    gap: rem(32);
   }
+}
 
-  &__content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+.philosophy__images {
+  max-width: 723px;
+  width: 100%;
+}
+
+.philosophy__text {
+  max-width: 486px;
+  width: 100%;
+  font-size: rem(18);
+  line-height: calc(40 / 18);
+  
+  @include mq(md) {
+    font-size: rem(16);
   }
+}
+.philosophy__catchphrase {
+  font-size: rem(60);
+  font-weight: $bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: rem(33);
+  line-height: 1;
+  margin-bottom: rem(67);
+}
 
-  &__text {
-    font-size: rem(18);
-    line-height: 1.8;
-    color: $color-main_gray;
-    margin-bottom: rem(40);
-
-    @include mq(md) {
-      font-size: rem(16);
-      margin-bottom: rem(32);
-    }
+.philosophy__description {
+  margin-bottom: rem(60);
+  @media screen and (max-width:px) {
+    margin-bottom: rem(32);
   }
+}
 
-  &__button {
-    text-align: center;
-  }
+.philosophy__button {
+  text-align: left;
+}
+
+.philosophy__bgimage {
+  position: absolute;
+  z-index: -2;
+}
+.philosophy__bgimage--top-right {
+  right: 0;
+  width: calc(686 / 1920 * 100%);
+  top:0;
+  transform: translateY(calc(239 / 404 * 100% * (-1)));
+}
+.philosophy__bgimage--bottom-left {
+  left: 0;
+  width: calc(1038 / 1920 * 100%);
+  bottom:0;
+}
+.philosophy__bgimage--bottom-right {
+  right: 0;
+  width: calc(440 / 1920 * 100%);
+  bottom:0;
 }

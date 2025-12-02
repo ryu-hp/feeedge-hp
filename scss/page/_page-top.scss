@@ -17,17 +17,17 @@
   align-items: center;
   gap: rem(10);
   min-width: rem(120);
-  
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  
-  &:hover {
-    transform: translateY(rem(-4));
-    box-shadow: 0 rem(8) rem(24) rgba(16, 97, 171, 0.3);
-  }
+}
+
+.page-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.page-top:hover {
+  transform: translateY(rem(-4));
+  box-shadow: 0 rem(8) rem(24) rgba(16, 97, 171, 0.3);
 }
 
 .page-top__arrow {
