@@ -1,16 +1,30 @@
 <footer class="footer">
-  <div class="footer__inner inner">
-    <div class="footer__flex">
+  <div class="footer__container">
+    <div class="footer__content">
       <div class="footer__logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/image/logo_icon_text.png" alt="FREEDGE">
+        <a href="<?php echo esc_url(home_url('/')); ?>">
+          <?php bloginfo('name'); ?>
+        </a>
       </div>
-      <p class="footer__text">&copy; FREEDGE Inc. All rights reserved.</p>
-      <a href="https://freedge.co.jp/" class="footer__corporate-link">
-        <span class="footer__corporate-link--text">企業サイト</span><span class="footer__corporate-link--icon"><img src="<?php echo get_template_directory_uri(); ?>/image/page-access.svg" alt="企業サイト"></span>
-      </a>
+      
+      <nav class="footer__nav">
+        <?php
+        wp_nav_menu(array(
+          'theme_location' => 'footer-menu',
+          'container' => false,
+          'menu_class' => 'footer__menu',
+          'fallback_cb' => false
+        ));
+        ?>
+      </nav>
+    </div>
+    
+    <div class="footer__copy">
+      <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
     </div>
   </div>
 </footer>
+
 <?php wp_footer(); ?>
 </body>
 </html>
