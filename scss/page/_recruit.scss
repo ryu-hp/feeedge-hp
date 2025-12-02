@@ -1,0 +1,33 @@
+@use "../global" as *;
+
+// RECRUIT（採用情報）セクション
+.recruit {
+  background-color: $color-bg_gray;
+
+  &__container {
+    width: 100%;
+    max-width: $inner;
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+
+    @include mq(md) {
+      padding: 0 $padding-sp;
+    }
+  }
+
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: 1.8;
+    color: $color-main_gray;
+    text-align: center;
+
+    @include mq(md) {
+      font-size: rem(16);
+    }
+  }
+}

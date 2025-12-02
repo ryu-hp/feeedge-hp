@@ -1,0 +1,39 @@
+@use "../global" as *;
+
+// PHILOSOPHY（企業理念）セクション
+.philosophy {
+  background-color: $color-white;
+
+  &__container {
+    width: 100%;
+    max-width: $inner;
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+
+    @include mq(md) {
+      padding: 0 $padding-sp;
+    }
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: 1.8;
+    color: $color-main_gray;
+    margin-bottom: rem(40);
+
+    @include mq(md) {
+      font-size: rem(16);
+      margin-bottom: rem(32);
+    }
+  }
+
+  &__button {
+    text-align: center;
+  }
+}

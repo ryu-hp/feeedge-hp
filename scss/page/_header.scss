@@ -1,243 +1,108 @@
 @use "../global" as *;
+
 .header {
-  color: $color-black;
-  font-size: rem(26);
   position: fixed;
   top: 0;
-  z-index: 50; // modalより低く設定
+  left: 0;
   width: 100%;
-  
-}
+  z-index: 100;
+  background-color: $color-white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 
-.inner.header__inner {
-  max-width: 1864px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: rem(36) rem(20);
-  position: relative;
-  z-index: 1024;
-}
-.header__logo {
-  max-width: rem(207);
-  width: 100%;
-}
-.header__logo-link {
-  font-family: $second-font-family;
-  font-weight: $bold;
-  font-size: clp(32);
-}
-
-.nav__list {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.nav__item + .nav__item {
-  margin-left: rem(40);
-}
-.nav__item + .nav__item.nav__link--primary{
-  margin-left: rem(32);
-}
-
-.nav__link {
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: $second-font-family;
-  font-weight: $bold;
-  color: #121212;
-}
-
-.nav__link--primary {
-  background-color: $color-theme;
-  color: $color-white;
-  border-radius: rem(2);
-  padding: rem(2) rem(36);
-  line-height: 1;
-  display: inline-block;
-}
-
-// ハンバーガーメニュー
-.header__hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: rem(32);
-  height: rem(18);
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  position: relative;
-  
-  @media screen and (max-width: 767px) {
+  &__container {
+    width: 100%;
+    max-width: $inner;
+    margin: 0 auto;
+    padding: 0 $padding-pc;
     display: flex;
-    width: 32px;
-    height: 12px;
-  }
-}
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
 
-.hamburger__line {
-  width: 100%;
-  height: 2px;
-  background-color: $color-theme;
-  transition: all 0.3s ease;
-  transform-origin: center;
-  position: absolute;
-  right: 0;
-}
-.hamburger__line:nth-child(1) {
-  top: 0;
-}
-.hamburger__line:nth-child(2) {
-  width: 75%;
-  margin-left: auto;
-  bottom: 0;
-}
-
-.hamburger.is-active .hamburger__line:nth-child(1) {
-  transform: translateY(5px) rotate(30deg);
-}
-
-.hamburger.is-active .hamburger__line:nth-child(2) {
-  transform: translateY(-5px) rotate(-30deg);
-  width: 100%;
-}
-
-// PCナビゲーションをスマホで非表示
-.header__nav {
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-}
-
-// ドロワーメニュー
-.drawer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 1000;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease;
-  
-  &.is-open {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-}
-
-.drawer__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.drawer__content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  background: linear-gradient(155deg, #0058B4 0%, #0070C5 50%, #089BE9 100%);
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  padding: rem(80) rem(20) rem(20);
-  overflow-y: auto;
-  
-  .drawer.is-open & {
-    transform: translateX(0);
-  }
-}
-
-.drawer__nav {
-  width: 100%;
-}
-
-.drawer__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  padding: rem(60) 0;
-}
-
-
-.drawer__link {
-  display: block;
-  padding: rem(14) 0;
-  color: $color-white;
-  text-decoration: none;
-  font-family: $second-font-family;
-  font-weight: $bold;
-  font-size: rem(44);
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-  line-height: 1;
-  
-  &:hover {
-    color: $color-theme;
-  }
-  
-  &--primary {
-    background: $color-white;
-    color: $color-theme;
-    padding: rem(12) rem(16);
-    border-radius: rem(4);
-    margin-top: rem(20);
-    text-align: center;
-    position: relative;
-    text-align: left;
-    line-height: 1;
-    
-    &:hover {
-      opacity: 0.8;
+    @include mq(md) {
+      padding: 0 $padding-sp;
+      height: 60px;
     }
   }
-  &--primary::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: rem(18);
-    width: rem(19);
-    height: rem(9);
-    color: $color-theme;
-    background-image: url('../image/simple-arrow_blue.svg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+
+  &__logo {
+    a {
+      font-size: rem(24);
+      font-weight: $bold;
+      color: $color-theme;
+      font-family: $second-font-family;
+      letter-spacing: 0.05em;
+
+      @include mq(md) {
+        font-size: rem(20);
+      }
+    }
+  }
+
+  &__nav {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      font-size: rem(16);
+      font-weight: $normal;
+      color: $color-main_gray;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-theme;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+
+    @include mq(md) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background-color: $color-theme;
+      transition: all 0.3s ease;
+    }
+
+    &.is-active {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
   }
 }
 
-// body がドロワー開いている時のスクロール制御
-body.drawer-open {
-  overflow: hidden;
-}
-
-@include mq(md) {
-  .header {
-    position: sticky;
-  }
-  .header__logo {
-    max-width: rem(160);
-  }
-  .header {
-    background-color: $color-white;
-  }
-  .inner.header__inner {
-    padding: rem(24) rem(15);
-    background-color: $color-white;
-  }
+// スクロール時のヘッダースタイル
+body.is-scrolled .header {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }

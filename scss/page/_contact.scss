@@ -1,0 +1,59 @@
+@use "../global" as *;
+
+// CONTACT（お問い合わせ）セクション
+.contact {
+  background-color: $color-theme;
+  color: $color-white;
+
+  .section-title {
+    color: $color-white;
+  }
+
+  .section-subtitle {
+    color: $color-white;
+    opacity: 0.9;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: $inner;
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+
+    @include mq(md) {
+      padding: 0 $padding-sp;
+    }
+  }
+
+  &__content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: 1.8;
+    margin-bottom: rem(40);
+    opacity: 0.95;
+
+    @include mq(md) {
+      font-size: rem(16);
+      margin-bottom: rem(32);
+    }
+  }
+
+  &__button {
+    .button {
+      background-color: $color-white;
+      color: $color-theme;
+      border-color: $color-white;
+
+      &:hover {
+        background-color: transparent;
+        color: $color-white;
+        border-color: $color-white;
+      }
+    }
+  }
+}

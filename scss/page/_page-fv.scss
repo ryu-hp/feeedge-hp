@@ -1,0 +1,52 @@
+@use "../global" as *;
+
+// 下層ページ共通ファーストビュー
+.page-fv {
+  position: relative;
+  width: 100%;
+  padding: rem(140) 0 rem(80);
+  background: linear-gradient(135deg, #025CB4 0%, #0990D8 100%);
+  color: $color-white;
+
+  @include mq(md) {
+    padding: rem(100) 0 rem(60);
+  }
+
+  &__container {
+    width: 100%;
+    max-width: $inner;
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+
+    @include mq(md) {
+      padding: 0 $padding-sp;
+    }
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: rem(56);
+    font-weight: $bold;
+    font-family: $second-font-family;
+    margin-bottom: rem(16);
+    letter-spacing: 0.1em;
+
+    @include mq(md) {
+      font-size: rem(40);
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(18);
+    font-weight: $normal;
+    opacity: 0.9;
+
+    @include mq(md) {
+      font-size: rem(16);
+    }
+  }
+}

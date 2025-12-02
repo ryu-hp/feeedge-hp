@@ -1,94 +1,95 @@
-@use "../global" as * ;
-
+@use "../global" as *;
 
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-    @include mq(md) {
-        font-size: vw(375px, 16px);
-    }
+  scroll-behavior: smooth;
+  font-size: 16px;
+  
+  @include mq(md) {
+    font-size: vw(375px, 16px);
+  }
 }
-img {
-    width: 100%;
-}
-a {
-    transition: opacity .3s ease;
-}
-a:hover {
-    opacity: 0.7;
-}
-.inner {
-    width: 100%;
-    max-width: calc($inner + ($padding-pc * 2));
-    padding-right: $padding-pc;
-    padding-left: $padding-pc;
-    margin-right: auto;
-    margin-left: auto;
-    box-sizing: border-box;
-    @include mq(md) {
-        padding-right: $padding-sp;
-        padding-left: $padding-sp;
-    }
-}
+
 body {
-    background-color: #F3F7FF;
-    font-family: $base-font-family;
-}
-main {
-    position: relative;
-    z-index: 1;
+  background-color: $color-white;
+  font-family: $base-font-family;
+  color: $color-main_gray;
+  line-height: 1.6;
+  padding-top: 80px;
+
+  @include mq(md) {
+    padding-top: 60px;
+  }
 }
 
-// index.html では container クラスを使用しているため
-.container {
-    width: 100%;
-    max-width: calc($inner + ($padding-pc * 2));
-    padding-right: $padding-pc;
-    padding-left: $padding-pc;
-    margin-right: auto;
-    margin-left: auto;
-    box-sizing: border-box;
-    @include mq(md) {
-        padding-right: $padding-sp;
-        padding-left: $padding-sp;
-    }
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
-.only-sp {
-    display: none;
-    @include mq(md) {
-        display: block;
-    }
-}
-.only-pc {
-    @include mq(md) {
-        display: none;
-    }
-}
 a {
-    text-decoration: none;
-}
-.text--engineer {
-  display: inline-block;
-  font-weight: bold;
-  background: $gradient-text-engineer;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-.title-eng {
-  font-size: rem(20);
-  color: $color-theme;
-  font-family: $second-font-family;
-  letter-spacing: -0.02em;
-  line-height: 0.82;
-  margin-bottom: rem(20);
-  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
-.font--second {
-  font-family: $second-font-family;
+main {
+  position: relative;
+  z-index: 1;
 }
 
-//base_laout
+// コンテナ
+.container {
+  width: 100%;
+  max-width: calc($inner + ($padding-pc * 2));
+  padding-right: $padding-pc;
+  padding-left: $padding-pc;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+
+  @include mq(md) {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
+}
+
+// ユーティリティクラス
+.only-sp {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.only-pc {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+// フェードインアニメーション
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// メニューが開いている時のbodyスクロール制御
+body.menu-open {
+  overflow: hidden;
+
+  @include mq(md) {
+    overflow: hidden;
+  }
+}

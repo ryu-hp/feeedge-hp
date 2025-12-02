@@ -1,21 +1,25 @@
 @charset "UTF-8";
 
+// Base styles
 @use "./base";
-@use "./page/section";
+
+// Layout components
 @use "./page/header";
-@use "./page/kv";
-@use "./page/about";
-@use "./page/work-style";
-@use "./page/interview";
-@use "./page/numbers";
-@use "./page/culture";
-@use "./page/message";
-@use "./page/jobs";
-@use "./page/faq";
-@use "./page/services";
-@use "./page/entry";
-@use "./page/entry-form";
-@use "./page/swiper";
 @use "./page/footer";
-@use "./page/page-top";
-@use "./page/animation";
+
+// Top page sections
+@use "./page/fv";
+@use "./page/philosophy";
+@use "./page/services";
+@use "./page/recruit";
+@use "./page/contact";
+
+// Page templates
+@use "./page/page-philosophy";
+@use "./page/page-company";
+@use "./page/page-services";
+@use "./page/page-contact";
+
+// Common components
+@use "./page/page-fv";
+@use "./page/section";

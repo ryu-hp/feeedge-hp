@@ -1,16 +1,90 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM loaded'); // デバッグ用
-  
-  try {
-    // Swiperの存在確認
-    if (typeof Swiper === 'undefined') {
-      console.error('Swiper is not loaded');
-      return;
+  // ハンバーガーメニュー
+  const headerToggle = document.querySelector('.header__toggle');
+  const body = document.body;
+
+  if (headerToggle) {
+    headerToggle.addEventListener('click', () => {
+      headerToggle.classList.toggle('is-active');
+      body.classList.toggle('menu-open');
+    });
+  }
+
+  // スムーズスクロール
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const targetPosition = targetElement.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // メニューが開いていたら閉じる
+        if (body.classList.contains('menu-open')) {
+          headerToggle.classList.remove('is-active');
+          body.classList.remove('menu-open');
+        }
+      }
+    });
+  });
+
+  // スクロール時のヘッダー処理
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 50) {
+      body.classList.add('is-scrolled');
+    } else {
+      body.classList.remove('is-scrolled');
     }
     
-    console.log('Swiper loaded successfully'); // デバッグ用
+    lastScrollTop = scrollTop;
+  });
 
-    const imageSwiper = new Swiper('.image-swiper', {
+  // サービスページのタブ切り替え
+  const serviceTabs = document.querySelectorAll('.services-detail__tab');
+  const servicePanels = document.querySelectorAll('.services-detail__panel');
+
+  serviceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.tab;
+      
+      // すべてのタブとパネルから active クラスを削除
+      serviceTabs.forEach(t => t.classList.remove('active'));
+      servicePanels.forEach(p => p.classList.remove('active'));
+      
+      // クリックされたタブと対応するパネルに active クラスを追加
+      tab.classList.add('active');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+
+  // フェードインアニメーション
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  fadeElements.forEach(element => {
+    fadeInObserver.observe(element);
+  });
+});
     slidesPerView: 'auto',
     loop: true,
     // centeredSlides: true,

@@ -1,0 +1,100 @@
+@use "../global" as *;
+
+// PHILOSOPHY（企業理念）ページ
+.page-philosophy {
+  padding-top: 80px;
+
+  @include mq(md) {
+    padding-top: 60px;
+  }
+
+  // MISSION セクション
+  .mission {
+    background-color: $color-white;
+
+    &__container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 $padding-pc;
+
+      @include mq(md) {
+        padding: 0 $padding-sp;
+      }
+    }
+
+    &__content {
+      text-align: center;
+    }
+
+    &__text {
+      font-size: rem(18);
+      line-height: 1.8;
+      color: $color-main_gray;
+
+      @include mq(md) {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  // VISION セクション
+  .vision {
+    background-color: $color-bg_gray;
+
+    &__container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 $padding-pc;
+
+      @include mq(md) {
+        padding: 0 $padding-sp;
+      }
+    }
+
+    &__content {
+      text-align: center;
+    }
+
+    &__text {
+      font-size: rem(18);
+      line-height: 1.8;
+      color: $color-main_gray;
+
+      @include mq(md) {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  // VALUE セクション
+  .value {
+    background-color: $color-white;
+
+    &__container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 $padding-pc;
+
+      @include mq(md) {
+        padding: 0 $padding-sp;
+      }
+    }
+
+    &__content {
+      text-align: center;
+    }
+
+    &__text {
+      font-size: rem(18);
+      line-height: 1.8;
+      color: $color-main_gray;
+
+      @include mq(md) {
+        font-size: rem(16);
+      }
+    }
+  }
+}
