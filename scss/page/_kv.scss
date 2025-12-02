@@ -1,0 +1,50 @@
+@use "../global" as *;
+
+.section--kv {
+  background: url('../image/KV_bg.jpg') no-repeat center/cover;
+  text-align: center;
+  color: $color-white;
+  padding: rem(60) 0;
+  height: calc(1080 / 1920 * 100vw);
+}
+.section__inner--kv {
+  position: relative;
+  height: 100%;
+}
+.kv__text-group {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.kv__text {
+  margin: 0 auto;
+  height: calc(1324 / 1920 * 100%);
+}
+
+.kv__text--sub {
+  margin-top: rem(20);
+  font-size: rem(32);
+  font-weight: 900;
+}
+@include mq(md) {
+  .section--kv {
+    height: calc(607 / 393 * 100vw);
+    background-image: url('../image/KV_bg_sp.jpg');
+  }
+  .kv__text-group {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    width: 78%;
+    top: 4%;
+  }
+  .kv__text {
+    height: auto;
+  }
+  .kv__text--sub {
+    font-size: rem(16);
+    margin-top: 0;
+  }
+}

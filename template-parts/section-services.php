@@ -1,0 +1,32 @@
+<section class="section section--services" id="services">
+  <div class="section__inner inner">
+    <div class="services__title-group">
+      <h2 class="section__title section__title--services js-fadeInUp">OUR SERVICES</h2>
+      <p class="services__title-sub services__title-sub--services js-fadeInUp">会社案内</p>
+    </div>
+    <?php
+    // our_services投稿タイプからデータを取得
+    $args = [
+      'post_type' => 'our_servはこれをices',
+      'posts_per_page' => 1,
+      'orderby' => 'menu_order',
+      'order' => 'ASC'
+    ];
+    $our_services_query = new WP_Query($args);
+    
+    if ($our_services_query->have_posts()):
+      while ($our_services_query->have_posts()): $our_services_query->the_post();
+        $iframe_code = get_post_meta(get_the_ID(), 'iframe_code', true);
+    ?>
+      <?php if (!empty($iframe_code)): ?>
+      <div class="services__pdf js-fadeInUp">
+        <?php echo $iframe_code; ?>
+      </div>
+      <?php endif; ?>
+    <?php
+      endwhile;
+      wp_reset_postdata();
+    endif;
+    ?>
+  </div>
+</section>

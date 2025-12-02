@@ -1,0 +1,94 @@
+@use "../global" as * ;
+
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    @include mq(md) {
+        font-size: vw(375px, 16px);
+    }
+}
+img {
+    width: 100%;
+}
+a {
+    transition: opacity .3s ease;
+}
+a:hover {
+    opacity: 0.7;
+}
+.inner {
+    width: 100%;
+    max-width: calc($inner + ($padding-pc * 2));
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    @include mq(md) {
+        padding-right: $padding-sp;
+        padding-left: $padding-sp;
+    }
+}
+body {
+    background-color: #F3F7FF;
+    font-family: $base-font-family;
+}
+main {
+    position: relative;
+    z-index: 1;
+}
+
+// index.html では container クラスを使用しているため
+.container {
+    width: 100%;
+    max-width: calc($inner + ($padding-pc * 2));
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    @include mq(md) {
+        padding-right: $padding-sp;
+        padding-left: $padding-sp;
+    }
+}
+
+.only-sp {
+    display: none;
+    @include mq(md) {
+        display: block;
+    }
+}
+.only-pc {
+    @include mq(md) {
+        display: none;
+    }
+}
+a {
+    text-decoration: none;
+}
+.text--engineer {
+  display: inline-block;
+  font-weight: bold;
+  background: $gradient-text-engineer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.title-eng {
+  font-size: rem(20);
+  color: $color-theme;
+  font-family: $second-font-family;
+  letter-spacing: -0.02em;
+  line-height: 0.82;
+  margin-bottom: rem(20);
+  text-transform: uppercase;
+}
+
+.font--second {
+  font-family: $second-font-family;
+}
+
+//base_laout
