@@ -6,7 +6,9 @@
     
     <div class="services__content">
       <p class="services__text">
-        テスト内容です。事業内容のテキストがここに入ります。
+        システム開発、Webソリューション、AI・データ活用など、<br>
+        最先端のテクノロジーを駆使した総合的なITサービスを提供しています。<br>
+        お客様のビジネス課題に最適なソリューションをご提案します。
       </p>
       <div class="services__button">
         <a href="<?php echo esc_url(home_url('/services')); ?>" class="button">詳しく見る</a>

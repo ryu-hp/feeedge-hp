@@ -29,11 +29,12 @@
 
     &__text {
       font-size: rem(18);
-      line-height: 1.8;
+      line-height: 2;
       color: $color-main_gray;
 
       @include mq(md) {
         font-size: rem(16);
+        line-height: 1.9;
       }
     }
   }
@@ -59,11 +60,12 @@
 
     &__text {
       font-size: rem(18);
-      line-height: 1.8;
+      line-height: 2;
       color: $color-main_gray;
 
       @include mq(md) {
         font-size: rem(16);
+        line-height: 1.9;
       }
     }
   }
@@ -84,16 +86,35 @@
     }
 
     &__content {
-      text-align: center;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     &__text {
-      font-size: rem(18);
-      line-height: 1.8;
+      font-size: rem(16);
+      line-height: 2;
       color: $color-main_gray;
 
       @include mq(md) {
-        font-size: rem(16);
+        font-size: rem(14);
+        line-height: 1.9;
+      }
+
+      strong {
+        color: $color-theme;
+        font-size: rem(18);
+        display: block;
+        margin-top: rem(20);
+
+        @include mq(md) {
+          font-size: rem(16);
+          margin-top: rem(16);
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
       }
     }
   }

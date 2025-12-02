@@ -24,16 +24,31 @@
     }
 
     &__content {
-      text-align: center;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     &__text {
-      font-size: rem(18);
-      line-height: 1.8;
+      font-size: rem(16);
+      line-height: 2;
       color: $color-main_gray;
 
       @include mq(md) {
+        font-size: rem(14);
+        line-height: 1.9;
+      }
+
+      strong {
+        display: block;
+        margin-top: rem(24);
         font-size: rem(16);
+        color: $color-theme;
+
+        @include mq(md) {
+          margin-top: rem(20);
+          font-size: rem(14);
+        }
       }
     }
   }
@@ -72,9 +87,10 @@
 
       th,
       td {
-        padding: rem(20) rem(16);
+        padding: rem(24) rem(16);
         text-align: left;
         vertical-align: top;
+        line-height: 1.8;
 
         @include mq(md) {
           padding: rem(16) rem(12);

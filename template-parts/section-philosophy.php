@@ -6,7 +6,9 @@
     
     <div class="philosophy__content">
       <p class="philosophy__text">
-        テスト内容です。企業理念のテキストがここに入ります。
+        私たちFREEDGEは、テクノロジーの力で社会に新しい価値を創造し、<br>
+        すべてのステークホルダーとともに持続可能な未来を築くことを使命としています。<br>
+        自由な発想と確かな技術で、お客様のビジネスの可能性を広げます。
       </p>
       <div class="philosophy__button">
         <a href="<?php echo esc_url(home_url('/philosophy')); ?>" class="button">詳しく見る</a>

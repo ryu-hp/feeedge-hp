@@ -6,7 +6,8 @@
     
     <div class="contact__content">
       <p class="contact__text">
-        お気軽にお問い合わせください。
+        サービスに関するご質問、ご相談など、お気軽にお問い合わせください。<br>
+        専門スタッフが丁寧に対応させていただきます。
       </p>
       <div class="contact__button">
         <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button">お問い合わせフォームへ</a>

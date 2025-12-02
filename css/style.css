@@ -788,12 +788,13 @@ body.is-scrolled .header {
 }
 .page-philosophy .mission__text {
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 2;
   color: #333333;
 }
 @media screen and (max-width: 767px) {
   .page-philosophy .mission__text {
     font-size: 1rem;
+    line-height: 1.9;
   }
 }
 .page-philosophy .vision {
@@ -815,12 +816,13 @@ body.is-scrolled .header {
 }
 .page-philosophy .vision__text {
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 2;
   color: #333333;
 }
 @media screen and (max-width: 767px) {
   .page-philosophy .vision__text {
     font-size: 1rem;
+    line-height: 1.9;
   }
 }
 .page-philosophy .value {
@@ -838,17 +840,35 @@ body.is-scrolled .header {
   }
 }
 .page-philosophy .value__content {
-  text-align: center;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .page-philosophy .value__text {
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 2;
   color: #333333;
 }
 @media screen and (max-width: 767px) {
   .page-philosophy .value__text {
-    font-size: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.9;
   }
+}
+.page-philosophy .value__text strong {
+  color: #025CB4;
+  font-size: 1.125rem;
+  display: block;
+  margin-top: 1.25rem;
+}
+@media screen and (max-width: 767px) {
+  .page-philosophy .value__text strong {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+.page-philosophy .value__text strong:first-child {
+  margin-top: 0;
 }
 
 .page-company {
@@ -874,16 +894,31 @@ body.is-scrolled .header {
   }
 }
 .page-company .message__content {
-  text-align: center;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .page-company .message__text {
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 2;
   color: #333333;
 }
 @media screen and (max-width: 767px) {
   .page-company .message__text {
-    font-size: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.9;
+  }
+}
+.page-company .message__text strong {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #025CB4;
+}
+@media screen and (max-width: 767px) {
+  .page-company .message__text strong {
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
   }
 }
 .page-company .company {
@@ -916,9 +951,10 @@ body.is-scrolled .header {
 }
 .page-company .company__table th,
 .page-company .company__table td {
-  padding: 1.25rem 1rem;
+  padding: 1.5rem 1rem;
   text-align: left;
   vertical-align: top;
+  line-height: 1.8;
 }
 @media screen and (max-width: 767px) {
   .page-company .company__table th,
