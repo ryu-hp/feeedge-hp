@@ -6,7 +6,6 @@
   width: 100%;
   padding: rem(300) 0 rem(88);
   z-index: 1;
-  background-color: $color-white;
   @include mq(md) {
     padding: rem(100) 0 rem(60);
   }

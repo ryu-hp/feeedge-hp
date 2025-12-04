@@ -1543,71 +1543,198 @@ body.menu-open .mobile-menu {
 }
 
 .message {
-  background-color: #F3F7FF;
+  padding-top: 13.75rem;
+  padding-bottom: 12.5rem;
 }
 
-.message__container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1.875rem;
+.section-title-contents.section-title-contents--message {
+  margin-bottom: 4.5rem;
 }
-@media screen and (max-width: 767px) {
-  .message__container {
-    padding: 0 1.25rem;
-  }
+
+.message__ceo-image {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.message__ceo-image img {
+  aspect-ratio: 2/1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .message__content {
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 2.5rem;
 }
 
-.message__text {
-  font-size: 1rem;
-  line-height: 2;
-  color: #333333;
-}
-@media screen and (max-width: 767px) {
-  .message__text {
-    font-size: 0.875rem;
-    line-height: 1.9;
-  }
+.message__catchphrase {
+  margin-bottom: 6.25rem;
 }
 
-.message__text strong {
+.message__left {
+  max-width: 462px;
+}
+
+.message__right {
+  max-width: 668px;
+}
+
+.message__figure {
+  max-width: 462px;
+  width: 100%;
+  position: relative;
+}
+
+.message__figure::before {
+  content: "";
   display: block;
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  color: #0172D5;
+  padding-top: 107.7922077922%;
+}
+
+.message__circle-contents {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgba(30, 30, 30, 0.4);
+  font-weight: 900;
+  width: 48.2683982684%;
+}
+
+.message__circle-contents::before {
+  content: "";
+  display: block;
+  width: 100px;
+  padding-top: 100%;
+}
+
+.message__circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 1;
+  font-size: 2rem;
+  padding: 0.25rem;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.message__circle-text--main {
+  text-transform: uppercase;
+}
+
+.message__circle-text--sub {
+  font-size: 0.4375em;
+  margin-top: 0.8571428571em;
+}
+
+.message__circle-contents.message__circle-contents--large {
+  width: 71.4285714286%;
+  background-color: rgba(1, 114, 213, 0.04);
+  color: #313131;
+  font-size: 2.75rem;
+  z-index: 1;
+}
+
+.message__circle-text--main--small {
+  font-size: 0.5em;
+}
+
+.message__circle-contents.message__circle-contents--bottom {
+  bottom: 0;
+  right: 0;
+}
+
+.message__circle-contents.message__circle-contents--top {
+  top: 0;
+  right: 14.7186147186%;
+}
+
+.message__circle-contents.message__circle-contents--left {
+  top: 19.6787148594%;
+  left: 0;
+}
+
+.message__description {
+  font-size: 1.25rem;
+  line-height: 2.2;
+  font-weight: 500;
+  margin-bottom: 3.3125rem;
 }
 @media screen and (max-width: 767px) {
-  .message__text strong {
-    margin-top: 1.25rem;
+  .message__description {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.message__ceo-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 1.1875rem;
+}
+
+.message__ceo-name--position {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+@media screen and (max-width: 767px) {
+  .message__ceo-name--position {
     font-size: 0.875rem;
   }
+}
+
+.message__ceo-name--main {
+  width: 10.75rem;
+}
+
+.message__ceo-name--main img {
+  display: block;
+  width: 100%;
 }
 
 .company {
-  background-color: #ffffff;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(223, 235, 250, 0)), to(rgb(223, 235, 250)));
+  background: linear-gradient(0deg, rgba(223, 235, 250, 0) 0%, rgb(223, 235, 250) 100%);
+  padding-top: 11.5rem;
+  padding-bottom: 12.5rem;
 }
 
-.company__container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1.875rem;
-}
-@media screen and (max-width: 767px) {
-  .company__container {
-    padding: 0 1.25rem;
-  }
-}
-
-.company__content {
-  max-width: 800px;
-  margin: 0 auto;
+.section-title-contents.section-title-contents--company {
+  margin-bottom: 4.5rem;
 }
 
 .company__table {
@@ -1615,56 +1742,33 @@ body.menu-open .mobile-menu {
   border-collapse: collapse;
 }
 
-.company__table tr {
-  border-bottom: 1px solid #e0e0e0;
+.company__table-item {
+  border-top: 1px solid #ffffff;
 }
 
-.company__table tr:last-child {
-  border-bottom: none;
+.company__table-item:last-child {
+  border-bottom: 1px solid #ffffff;
 }
 
-.company__table th,
-.company__table td {
-  padding: 1.5rem 1rem;
+.company__table-head,
+.company__table-content {
+  padding: 2.8125rem 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.company__table-head {
+  max-width: 25rem;
+  width: 27.027027027%;
   text-align: left;
-  vertical-align: top;
-  line-height: 1.8;
-}
-@media screen and (max-width: 767px) {
-  .company__table th,
-  .company__table td {
-    padding: 1rem 0.75rem;
-    display: block;
-    width: 100%;
-  }
-}
-
-.company__table th {
   font-weight: 700;
-  color: #0172D5;
-  width: 30%;
-  font-size: 1rem;
-}
-@media screen and (max-width: 767px) {
-  .company__table th {
-    width: 100%;
-    padding-bottom: 0.5rem;
-    font-size: 0.875rem;
-  }
-}
-
-.company__table td {
-  color: #333333;
-  font-size: 1rem;
-}
-@media screen and (max-width: 767px) {
-  .company__table td {
-    padding-top: 0;
-    font-size: 0.875rem;
-  }
+  vertical-align: baseline;
 }
 
 .company__map {
+  margin-top: 2.875rem;
   width: 100%;
   height: 400px;
 }
@@ -1986,7 +2090,6 @@ body.menu-open .mobile-menu {
   width: 100%;
   padding: 18.75rem 0 5.5rem;
   z-index: 1;
-  background-color: #ffffff;
 }
 @media screen and (max-width: 767px) {
   .page-fv {

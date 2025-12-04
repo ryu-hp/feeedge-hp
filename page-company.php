@@ -40,9 +40,9 @@ get_header();
                   <p class="message__circle-text--sub">架け橋</p>
                 </div>
               </div>
-              <div class="message__circle-contents message__circle-contents--small message__circle-contents--bottom">
+              <div class="message__circle-contents message__circle-contents--large message__circle-contents--bottom">
                 <div class="message__circle-text">
-                  <p class="message__circle-text--main">freedge</p>
+                  <p class="message__circle-text--main"><span class="message__circle-text--main--small">=</span>freedge</p>
                 </div>
               </div>
             </div>
@@ -122,8 +122,6 @@ get_header();
     </div>
   </section>
   
-  <!-- CONTACT（お問い合わせ） -->
-  <?php get_template_part('template-parts/section', 'contact'); ?>
 </main>
 
 <?php
