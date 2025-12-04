@@ -18,8 +18,6 @@ get_header();
   <!-- RECRUIT（採用情報） -->
   <?php get_template_part('template-parts/section', 'recruit'); ?>
   
-  <!-- CONTACT（お問い合わせ） -->
-  <?php get_template_part('template-parts/section', 'contact'); ?>
 </main>
 
 <?php
