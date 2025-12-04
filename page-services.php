@@ -13,7 +13,10 @@ get_header();
   <!-- FREEDGEの3つの事業領域 -->
   <section class="services-intro" id="services-intro">
     <div class="services-intro__container">
-      <h2 class="section-title">FREEDGEの3つの事業領域</h2>
+      <div class="section-title-contents section-title-contents--services-intro">
+        <h2 class="section-title">FREEDGEの3つの事業領域</h2>
+        <p class="section-subtitle">事業内容</p>
+      </div>
       <div class="services-intro__content">
         <p class="services-intro__text">
           システム開発からAI活用まで、幅広いテクノロジー領域で<br>

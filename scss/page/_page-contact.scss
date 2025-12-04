@@ -1,13 +1,7 @@
 @use "../global" as *;
 
 // CONTACT(お問い合わせ)ページ
-.page-contact {
-  padding-top: 80px;
 
-  @include mq(md) {
-    padding-top: 60px;
-  }
-}
 
 // お問い合わせフォーム セクション
 .contact-form {

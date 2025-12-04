@@ -12,84 +12,112 @@ get_header();
   
   <!-- MESSAGE（代表メッセージ） -->
   <section class="message" id="message">
-    <div class="message__container">
-      <h2 class="section-title">MESSAGE</h2>
-      <p class="section-subtitle">代表メッセージ</p>
-      <div class="message__content">
-        <p class="message__text">
-          デジタル技術の急速な進化により、ビジネス環境は日々変化しています。<br>
-          この変化の激しい時代において、FREEDGEは常に一歩先を見据え、<br>
-          お客様のビジネスの成長を支援することを使命としています。<br><br>
-          
-          私たちが大切にしているのは、「自由な発想」と「確かな技術力」です。<br>
-          既成概念にとらわれない柔軟な思考と、最新のテクノロジーを駆使した<br>
-          ソリューションで、お客様の課題解決に全力で取り組みます。<br><br>
-          
-          これからも、お客様、パートナー、そして社員全員と共に成長し、<br>
-          社会に価値を提供し続ける企業であり続けます。<br><br>
-          
-          <strong>代表取締役社長　山田 太郎</strong>
-        </p>
+    <div class="message__container container">
+      <div class="section-title-contents section-title-contents--message">
+        <h2 class="section-title">MESSAGE</h2>
+        <p class="section-subtitle">代表メッセージ</p>
+      </div>
+      <div class="message__body">
+        <div class="message__ceo-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/ceo-image.webp" alt="代表取締役社長　松原充芳">
+        </div>
+        <div class="message__content">
+          <div class="message__left">
+            <p class="message__catchphrase section-catchphrase">
+              <span>ITの力で、</span>
+              <span>人々をもっと自由に</span>
+            </p>
+            <div class="message__figure">
+              <div class="message__circle-contents message__circle-contents--small message__circle-contents--left">
+                <div class="message__circle-text">
+                  <p class="message__circle-text--main">freedom</p>
+                  <p class="message__circle-text--sub">自由</p>
+                </div>
+              </div>
+              <div class="message__circle-contents message__circle-contents--small message__circle-contents--top">
+                <div class="message__circle-text">
+                  <p class="message__circle-text--main">bridge</p>
+                  <p class="message__circle-text--sub">架け橋</p>
+                </div>
+              </div>
+              <div class="message__circle-contents message__circle-contents--small message__circle-contents--bottom">
+                <div class="message__circle-text">
+                  <p class="message__circle-text--main">freedge</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="message__right">
+            <p class="message__description">
+              情報社会といわれる現代では、スマートフォンを始めいたるところにITが活用され、数年前まではできなかったことができるようになり、人々はより多くの選択肢を持つことで、より自由な生活を手にしています。<br><br>
+              私自身、通信キャリアでエンジニアとして、様々な業界のお客様へITソリューションの提案や導入を行ってきた中で、今後もITによって社会が発展してくことを確信しています。<br><br>
+              当社は無限の可能性を持つITの力を駆使し、ひとりひとりに今よりも多くの自由を提供します。一方、経済産業省の発表では、2030年には最大で約79万人のIT人材が不足すると報告されています。<br><br>
+              そのため、ひとりでも多くの方にエンジニアになりたい、続けたいと思っていただけるよう、「エンジニアをもっと自由に」をスローガンに事業活動に専念してまいります。<br>
+              すべての人にとっての自由の架け橋となる企業を目指します。
+            </p>
+            <div class="message__ceo-name">
+              <span class="message__ceo-name--position">代表取締役社長</span>
+              <span class="message__ceo-name--main"><img src="<?php echo get_template_directory_uri(); ?>/image/ceo-name.webp" alt="松原充芳"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
   <!-- COMPANY（会社概要） -->
   <section class="company" id="company">
-    <div class="company__container">
-      <h2 class="section-title">COMPANY</h2>
-      <p class="section-subtitle">会社概要</p>
-      <div class="company__content">
-        <table class="company__table">
-          <tr>
-            <th>会社名</th>
-            <td>株式会社FREEDGE</td>
-          </tr>
-          <tr>
-            <th>設立</th>
-            <td>2015年4月1日</td>
-          </tr>
-          <tr>
-            <th>代表者</th>
-            <td>代表取締役社長　山田 太郎</td>
-          </tr>
-          <tr>
-            <th>資本金</th>
-            <td>5,000万円</td>
-          </tr>
-          <tr>
-            <th>従業員数</th>
-            <td>120名（2024年12月現在）</td>
-          </tr>
-          <tr>
-            <th>本社所在地</th>
-            <td>〒100-0001<br>東京都千代田区千代田1-1-1<br>FREEDGEビル 10F</td>
-          </tr>
-          <tr>
-            <th>事業内容</th>
-            <td>
-              ・システム開発・運用保守<br>
-              ・Webソリューション開発<br>
-              ・AI・データ分析サービス<br>
-              ・クラウドインフラ構築<br>
-              ・ITコンサルティング
-            </td>
-          </tr>
-          <tr>
-            <th>取引銀行</th>
-            <td>
-              みずほ銀行 本店<br>
-              三菱UFJ銀行 東京営業部
-            </td>
-          </tr>
-          <tr>
-            <th>主要取引先</th>
-            <td>
-              大手製造業、金融機関、官公庁、通信キャリア、<br>
-              小売・流通業、医療機関 他多数
-            </td>
-          </tr>
-        </table>
+    <div class="company__container container">
+      <div class="section-title-contents section-title-contents--company">
+        <h2 class="section-title">company</h2>
+        <p class="section-subtitle">会社概要</p>
+      </div>
+      <div class="company__body">
+        <div class="company__content">
+          <table class="company__table">
+            <?php
+            // 会社概要カスタム投稿を取得
+            $args = array(
+              'post_type' => 'company_info',
+              'posts_per_page' => -1,
+              'orderby' => 'menu_order',
+              'order' => 'ASC'
+            );
+            $company_info_query = new WP_Query($args);
+            
+            if ($company_info_query->have_posts()) :
+              while ($company_info_query->have_posts()) : $company_info_query->the_post();
+                $label = get_field('company_info__label');
+                $content = get_field('company_info__content');
+                $content_map = get_field('company_info__content_map');
+                
+                if ($label && ($content || $content_map)) :
+            ?>
+            <tr class="company__table-item">
+              <th class="company__table-head"><?php echo esc_html($label); ?></th>
+              <td class="company__table-content">
+                <?php echo nl2br(esc_html($content)); ?>
+                <?php if ($content_map) : ?>
+                  <div class="company__map">
+                    <iframe src="<?php echo esc_url($content_map); ?>" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                <?php endif; ?>
+              </td>
+            </tr>
+            <?php
+                endif;
+              endwhile;
+              wp_reset_postdata();
+            else :
+              // デフォルト表示（カスタム投稿がない場合）
+            ?>
+            <tr class="company__table-item">
+              <th class="company__table-head">会社名</th>
+              <td class="company__table-content">株式会社FREEDGE</td>
+            </tr>
+            <?php endif; ?>
+          </table>
+        </div>
       </div>
     </div>
   </section>

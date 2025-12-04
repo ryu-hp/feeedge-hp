@@ -1,8 +1,10 @@
 <!-- CONTACT（お問い合わせ）セクション -->
 <section class="contact" id="contact">
   <div class="contact__container">
-    <h2 class="section-title">CONTACT</h2>
-    <p class="section-subtitle">お問い合わせ</p>
+    <div class="section-title-contents section-title-contents--contact-section">
+      <h2 class="section-title">CONTACT</h2>
+      <p class="section-subtitle">お問い合わせ</p>
+    </div>
     
     <div class="contact__content">
       <p class="contact__text">

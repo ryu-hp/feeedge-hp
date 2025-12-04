@@ -3,6 +3,28 @@
 // RECRUIT（採用情報）セクション
 .recruit {
   position: relative;
+  z-index: 1;
+  padding-top: rem(28);
+  padding-bottom: rem(79);
+  margin-top: rem(270);
+}
+
+.recruit__shape-image {
+  position: absolute;
+  z-index: -1;
+}
+.recruit__shape-image--top-left {
+  top: 0;
+  left: 0;
+  max-width: 182px;
+  width: 100%;
+}
+.recruit__shape-image--bottom-right {
+  bottom: 0;
+  right: 0;
+  max-width: 440px;
+  width: 100%;
+  transform: translateY(calc(19 / 320 * 100%));
 }
 
 .recruit a {

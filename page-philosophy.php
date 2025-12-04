@@ -12,66 +12,131 @@ get_header();
   
   <!-- MISSION（ミッション） -->
   <section class="mission" id="mission">
-    <div class="mission__container">
-      <h2 class="section-title">MISSION</h2>
-      <p class="section-subtitle">ミッション</p>
+    <div class="mission__container container">
+      <div class="section-title-contents">
+        <h2 class="section-title">mission</h2>
+        <p class="section-subtitle">ミッション</p>
+      </div>
       <div class="mission__content">
+        <p class="mission__catchphrase section-catchphrase">
+          <span>関わるすべての人にとって、</span>
+          <span><span class="color-theme">自由</span>への架け橋となる</span>
+        </p>
         <p class="mission__text">
-          テクノロジーの力で、社会に新しい価値を創造し、<br>
-          すべてのステークホルダーに幸せと成長をもたらす。<br><br>
-          私たちは、革新的なソリューションを通じて、<br>
-          お客様のビジネスの成功を実現し、<br>
-          持続可能な社会の発展に貢献します。
+          FREEDGEは、「自由」をキーワードに、<br>
+          社会・お客様・エンジニアのあらゆる可能性を広げることを使命とし、<br>
+          求められるものを超えて“驚き”と“感動”を生み出すエンジニア集団として、<br>
+          現在・過去・未来の流れを読み解きながら、<br>
+          自らの道＝“自流”を切り拓いていきます。<br>
+          関わるすべての人が、今よりも自由になれる社会の実現を、<br>
+          ITの力で支えていきます。
         </p>
       </div>
+    </div>
+    <div class="mission__image">
+      <img src="<?php echo get_template_directory_uri(); ?>/image/circle.webp" alt="MISSIONイメージ画像">
     </div>
   </section>
   
   <!-- VISION（理念） -->
   <section class="vision" id="vision">
-    <div class="vision__container">
-      <h2 class="section-title">VISION</h2>
-      <p class="section-subtitle">理念</p>
+    <div class="vision__container container">
+      <div class="section-title-contents section-title-contents--vision">
+        <h2 class="section-title">vision</h2>
+        <p class="section-subtitle">理念</p>
+      </div>
       <div class="vision__content">
         <p class="vision__text">
-          自由な発想と確かな技術力で、<br>
-          未来を切り拓くテクノロジーカンパニーへ。<br><br>
-          2030年までに、国内トップクラスの<br>
-          イノベーション創出企業として認知され、<br>
-          グローバル市場でも存在感を発揮する企業を目指します。
+          私たちは、エンジニアが自分らしく挑戦し、<br>
+          成長できる環境こそが、<br>
+          価値あるソリューションを生み出す原動力だと考えています。
+        </p>
+        <p class="vision__text">
+          ただ“求められたもの”を形にするだけでなく、<br>
+          そこに<span class="weight-bold">「驚き」</span>と<span class="weight-bold">「感動」</span>を加え、期待を超える成果を追求する。
+        </p>
+        <p class="vision__text">
+          そのために、過去と現在を学び、未来を見据えながら、<br>
+          自分たちの“自流”を築いていく姿勢を大切にしています。<br>
+          変化を恐れず、技術と価値を自ら創造する、<br>
+          自由でしなやかなエンジニア集団を目指します。
         </p>
       </div>
+    </div>
+    <div class="vision__image">
+      <img src="<?php echo get_template_directory_uri(); ?>/image/box.webp" alt="visionイメージ画像">
     </div>
   </section>
   
   <!-- VALUE（行動指針） -->
   <section class="value" id="value">
-    <div class="value__container">
-      <h2 class="section-title">VALUE</h2>
-      <p class="section-subtitle">行動指針</p>
+    <div class="value__container container">
+      <div class="section-title-contents section-title-contents--value">
+        <h2 class="section-title">value</h2>
+        <p class="section-subtitle">行動指針</p>
+      </div>
       <div class="value__content">
-        <p class="value__text">
-          <strong>1. Challenge（挑戦）</strong><br>
-          常に新しいことに挑戦し、失敗を恐れず前進する。<br><br>
-          
-          <strong>2. Innovation（革新）</strong><br>
-          既成概念にとらわれず、革新的なアイデアを生み出す。<br><br>
-          
-          <strong>3. Collaboration（協働）</strong><br>
-          チームワークを大切にし、多様性を尊重する。<br><br>
-          
-          <strong>4. Quality（品質）</strong><br>
-          高品質なサービス提供にこだわり、お客様の期待を超える。<br><br>
-          
-          <strong>5. Growth（成長）</strong><br>
-          個人と組織の継続的な成長を追求する。
-        </p>
+        <div class="value__columns">
+          <div class="value__item">
+            <div class="value__item-columns">
+              <p class="value__item-number">01</p>
+              <div class="value__item-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/image/value-image-01.webp" alt="be free">
+              </div>
+              <div class="value__item-text">
+                <h3 class="value__item-title">be free</h3>
+                <p class="value__item-description">
+                  自ら自由を望み、皆で自由を叶える。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="value__item">
+            <div class="value__item-columns">
+              <p class="value__item-number">02</p>
+              <div class="value__item-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/image/value-image-02.webp" alt="passion">
+              </div>
+              <div class="value__item-text">
+                <h3 class="value__item-title">passion</h3>
+                <p class="value__item-description">
+                  情熱をもって取り組み、その情熱がかかわる人へ伝播し、想像以上の成果を分かち合える組織であり続ける。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="value__item">
+            <div class="value__item-columns">
+              <p class="value__item-number">03</p>
+              <div class="value__item-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/image/value-image-03.webp" alt="responsibility">
+              </div>
+              <div class="value__item-text">
+                <h3 class="value__item-title">responsibility</h3>
+                <p class="value__item-description">
+                  物事を他責ではなく、自責で捉え、自分事として行動する。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="value__item">
+            <div class="value__item-columns">
+              <p class="value__item-number">04</p>
+              <div class="value__item-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/image/value-image-04.webp" alt="respect">
+              </div>
+              <div class="value__item-text">
+                <h3 class="value__item-title">respect</h3>
+                <p class="value__item-description">
+                  いかなる関係や状況でも相手を敬う気持ちを忘れず、感謝と礼儀を大切にする。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  
-  <!-- CONTACT（お問い合わせ） -->
-  <?php get_template_part('template-parts/section', 'contact'); ?>
 </main>
 
 <?php

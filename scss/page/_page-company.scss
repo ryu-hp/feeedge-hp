@@ -1,13 +1,7 @@
 @use "../global" as *;
 
 // COMPANY(会社概要)ページ
-.page-company {
-  padding-top: 80px;
 
-  @include mq(md) {
-    padding-top: 60px;
-  }
-}
 
 // MESSAGE セクション
 .message {
@@ -123,4 +117,20 @@
     padding-top: 0;
     font-size: rem(14);
   }
+}
+
+// Googleマップのスタイル
+.company__map {
+  width: 100%;
+  height: 400px;
+  
+  @include mq(md) {
+    height: 300px;
+  }
+}
+
+.company__map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

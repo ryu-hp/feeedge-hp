@@ -1,13 +1,6 @@
 @use "../global" as *;
 
 // SERVICES(事業内容)ページ
-.page-services {
-  padding-top: 80px;
-
-  @include mq(md) {
-    padding-top: 60px;
-  }
-}
 
 // 3つの事業領域 セクション
 .services-intro {

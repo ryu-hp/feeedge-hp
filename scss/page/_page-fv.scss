@@ -4,10 +4,9 @@
 .page-fv {
   position: relative;
   width: 100%;
-  padding: rem(140) 0 rem(80);
-  background: linear-gradient(135deg, #025CB4 0%, #0990D8 100%);
-  color: $color-white;
-
+  padding: rem(300) 0 rem(88);
+  z-index: 1;
+  background-color: $color-white;
   @include mq(md) {
     padding: rem(100) 0 rem(60);
   }
@@ -15,38 +14,49 @@
 
 .page-fv__container {
   width: 100%;
-  max-width: $inner;
+  max-width: calc(1760px + ($padding-pc * 2));
   margin: 0 auto;
   padding: 0 $padding-pc;
-
   @include mq(md) {
     padding: 0 $padding-sp;
   }
 }
 
-.page-fv__content {
-  text-align: center;
-}
-
 .page-fv__title {
-  font-size: rem(56);
+  font-size: rem(140);
   font-weight: $bold;
   font-family: $second-font-family;
-  margin-bottom: rem(16);
-  letter-spacing: 0.1em;
+  background: $gradient-freedge;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  margin-bottom: rem(10);
+  line-height: 1;
+  display: inline-block;
 
   @include mq(md) {
-    font-size: rem(40);
-    margin-bottom: rem(12);
+    font-size: rem(80);
   }
 }
 
 .page-fv__subtitle {
   font-size: rem(18);
-  font-weight: $normal;
-  opacity: 0.9;
-
+  letter-spacing: 0.06em;
+  font-weight: $w-black;
+  line-height: 1;
   @include mq(md) {
     font-size: rem(16);
+  }
+}
+.page-fv__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: rem(686);
+  width: 100%;
+  z-index: -1;
+  @include mq(md) {
+    max-width: rem(340);
   }
 }

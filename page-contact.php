@@ -13,7 +13,10 @@ get_header();
   <!-- お気軽にお問い合わせください。（お問い合わせフォーム） -->
   <section class="contact-form" id="contact-form">
     <div class="contact-form__container">
-      <h2 class="section-title">お気軽にお問い合わせください。</h2>
+      <div class="section-title-contents section-title-contents--contact-form">
+        <h2 class="section-title">お気軽にお問い合わせください。</h2>
+        <p class="section-subtitle">お問い合わせフォーム</p>
+      </div>
       
       <div class="contact-form__content">
         <?php

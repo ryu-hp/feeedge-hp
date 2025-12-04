@@ -28,4 +28,10 @@
       </div>
     </a>
   </div>
+  <div class="recruit__shape-image recruit__shape-image--top-left">
+    <img src="<?php echo get_template_directory_uri(); ?>/image/shape-04.webp" alt="背景装飾画像">
+  </div> 
+  <div class="recruit__shape-image recruit__shape-image--bottom-right">
+    <img src="<?php echo get_template_directory_uri(); ?>/image/shape-05.webp" alt="背景装飾画像">
+  </div>
 </section>

@@ -2,25 +2,30 @@
 <section class="services" id="services">
   <div class="services__container container">
     <div class="services__top-contents">
-      <div class="services__top-columns">
-        <div class="services__top-text">
-          <div class="section-title-contents">
-            <h2 class="section-title">SERVICES</h2>
-            <p class="section-subtitle">事業内容</p>
+      <div class="services__top-contents-container">
+        <div class="services__top-columns">
+          <div class="services__top-text">
+            <div class="section-title-contents">
+              <h2 class="section-title">SERVICES</h2>
+              <p class="section-subtitle">事業内容</p>
+            </div>
+            <p class="services__catchphrase">
+              <span>ITで支える、</span>
+              <span><span class="color-theme">３つ</span>のソリューション</span>
+            </p>
+            <p class="services__description">
+              FREEDGEは、お客様一人ひとりの課題に寄り添い、<br>
+              システム開発からインフラ構築、オフィス環境まで幅広くサポートしています。 <br>
+              3つの事業で、社会の“自由”をともにつくります。
+            </p>
           </div>
-          <p class="services__catchphrase">
-            <span>ITで支える、</span>
-            <span><span class="color-theme">３つ</span>のソリューション</span>
-          </p>
-          <p class="services__description">
-            FREEDGEは、お客様一人ひとりの課題に寄り添い、<br>
-            システム開発からインフラ構築、オフィス環境まで幅広くサポートしています。 <br>
-            3つの事業で、社会の“自由”をともにつくります。
-          </p>
+          <div class="services__top-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/image/top-services-image-top.webp" alt="事業内容">
+          </div>
         </div>
-        <div class="services__top-image">
-          <img src="<?php echo get_template_directory_uri(); ?>/image/top-services-image-top.webp" alt="事業内容">
-        </div>
+      </div>
+      <div class="services__top-shape-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/image/triangle.webp" alt="図形">
       </div>
     </div>
     <div class="services__body">

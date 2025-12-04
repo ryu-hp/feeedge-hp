@@ -5,13 +5,13 @@
       <h1 class="page-fv__title">
         <?php
         if (is_page('philosophy')) {
-          echo 'PHILOSOPHY';
+          echo 'philosophy';
         } elseif (is_page('company')) {
-          echo 'COMPANY';
+          echo 'company';
         } elseif (is_page('services')) {
-          echo 'SERVICES';
+          echo 'services';
         } elseif (is_page('contact')) {
-          echo 'CONTACT';
+          echo 'contact';
         } else {
           the_title();
         }
@@ -31,5 +31,8 @@
         ?>
       </p>
     </div>
+  </div>
+  <div class="page-fv__image">
+    <img src="<?php echo get_template_directory_uri(); ?>/image/shapes-01.webp" alt="背景装飾画像">
   </div>
 </section>
