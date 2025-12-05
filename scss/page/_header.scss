@@ -6,8 +6,8 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: $color-white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background-color: transparent;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
@@ -71,8 +71,9 @@
   gap: rem(40);
 }
 
-.header__menu li {
+.header__menu > li {
   list-style: none;
+  position: relative;
 }
 
 .header__menu a {
@@ -84,6 +85,54 @@
 
 .header__menu a:hover {
   color: $color-theme;
+}
+
+// サブメニュー
+.header__menu .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background-color: $color-white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: rem(12) 0;
+  margin-top: rem(8);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.header__menu li:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__menu .sub-menu li {
+  list-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header__menu .sub-menu li:last-child {
+  border-bottom: none;
+}
+
+.header__menu .sub-menu a {
+  display: block;
+  padding: rem(12) rem(20);
+  font-size: rem(14);
+  font-weight: $medium;
+  color: $color-main_gray;
+  transition: all 0.3s ease;
+}
+
+.header__menu .sub-menu a:hover {
+  background-color: rgba(1, 114, 213, 0.05);
+  color: $color-theme;
+  padding-left: rem(24);
 }
 
 // 外部リンク（異なるドメイン）のスタイル
@@ -159,6 +208,8 @@
 
 // スクロール時のヘッダースタイル
 body.is-scrolled .header {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 

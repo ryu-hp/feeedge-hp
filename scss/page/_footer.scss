@@ -135,11 +135,6 @@
   display: flex;
   gap: rem(40);
   flex-wrap: wrap;
-
-  @include mq(md) {
-    flex-direction: column;
-    gap: rem(20);
-  }
 }
 
 .footer__menu li {
@@ -223,5 +218,23 @@
 
   @include mq(md) {
     font-size: rem(14);
+  }
+}
+
+@include mq(md) {
+  .section-title-contents.section-title-contents--contact {
+    margin-bottom: rem(32);
+  }
+  .footer__contact-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .footer__menu {
+    flex-direction: column;
+    gap: rem(40);
+  }
+  .footer__menu > li {
+    gap: rem(20);
   }
 }

@@ -94,200 +94,213 @@ get_header();
   <section class="services-detail" id="services-detail">
     <div class="services-detail__container container">
       <div class="services-detail__content">
-        <div class="services-detail__panel active" id="service1">
+        <?php
+        // サービスの配列を定義（ID、スラッグ、クラス）
+        $services = array(
+          array('id' => 'service1', 'slug' => 'system-engineering', 'class' => 'active'),
+          array('id' => 'service2', 'slug' => 'system-integration', 'class' => ''),
+          array('id' => 'service3', 'slug' => 'facility', 'class' => '')
+        );
+        
+        // 各サービスをループ
+        foreach ($services as $service) :
+          // スラッグでservices投稿を取得
+          $args = array(
+            'post_type' => 'services',
+            'name' => $service['slug'],
+            'posts_per_page' => 1
+          );
+          $service_query = new WP_Query($args);
+          
+          if ($service_query->have_posts()) :
+            while ($service_query->have_posts()) : $service_query->the_post();
+              // ACFフィールドを取得
+              $feature_head_1 = get_field('service_feature_head_1');
+              $feature_description_1 = get_field('service_feature_description_1');
+              $feature_head_2 = get_field('service_feature_head_2');
+              $feature_description_2 = get_field('service_feature_description_2');
+              $feature_head_3 = get_field('service_feature_head_3');
+              $feature_description_3 = get_field('service_feature_description_3');
+              
+              // サービスごとの固有情報を設定
+              $service_data = array(
+                'service1' => array(
+                  'title' => 'SYSTEM ENGINEERING<br>SERVICES',
+                  'subtitle' => 'システムエンジニアリング事業',
+                  'description' => 'システムエンジニアリング事業とは、経験豊富なITエンジニアと技術を求める企業を最適にマッチングし、プロジェクト単位での技術支援・開発支援を行う常駐型のサービスです。<br><br>FREEDGEには、Web系・インフラ系をはじめとした多様な領域に対応できるエンジニアが在籍しており、お客様の課題やニーズに応じた柔軟な体制を構築することが可能です。<br><br>対応領域は、ネットワークやサーバー、データベース、セキュリティといったインフラ系から、フロントエンド・バックエンドなどのWeb系、さらにはシステム開発・運用などのソフトウェア領域、プロジェクトマネジメントまで、広範にわたります。',
+                  'image' => 'service-image-01.webp',
+                  'alt' => 'システムエンジニアリング事業イメージ'
+                ),
+                'service2' => array(
+                  'title' => 'SYSTEM INTEGRATION<br>SERVICES',
+                  'subtitle' => 'システムインテグレーション事業',
+                  'description' => 'システムインテグレーション事業とは、経験豊富なITエンジニアと技術を求める企業を最適にマッチングし、プロジェクト単位での技術支援・開発支援を行う常駐型のサービスです。<br><br>FREEDGEには、Web系・インフラ系をはじめとした多様な領域に対応できるエンジニアが在籍しており、お客様の課題やニーズに応じた柔軟な体制を構築することが可能です。<br><br>対応領域は、ネットワークやサーバー、データベース、セキュリティといったインフラ系から、フロントエンド・バックエンドなどのWeb系、さらにはシステム開発・運用などのソフトウェア領域、プロジェクトマネジメントまで、広範にわたります。',
+                  'image' => 'service-image-01.webp',
+                  'alt' => 'システムインテグレーション事業イメージ'
+                ),
+                'service3' => array(
+                  'title' => 'FACILITY<br>SERVICES',
+                  'subtitle' => 'ファシリティ事業',
+                  'description' => 'ファシリティ事業とは、経験豊富なITエンジニアと技術を求める企業を最適にマッチングし、プロジェクト単位での技術支援・開発支援を行う常駐型のサービスです。<br><br>FREEDGEには、Web系・インフラ系をはじめとした多様な領域に対応できるエンジニアが在籍しており、お客様の課題やニーズに応じた柔軟な体制を構築することが可能です。<br><br>対応領域は、ネットワークやサーバー、データベース、セキュリティといったインフラ系から、フロントエンド・バックエンドなどのWeb系、さらにはシステム開発・運用などのソフトウェア領域、プロジェクトマネジメントまで、広範にわたります。',
+                  'image' => 'service-image-01.webp',
+                  'alt' => 'ファシリティ事業イメージ'
+                )
+              );
+              
+              $current_service = $service_data[$service['id']];
+        ?>
+        <div class="services-detail__panel <?php echo esc_attr($service['class']); ?>" id="<?php echo esc_attr($service['id']); ?>">
           <div class="services-detail__columns">
             <div class="services-detail__text">
               <div class="section-title-contents section-title-contents--services-detail">
-                <h2 class="section-title">SYSTEM ENGINEERING<br>SERVICES</h2>
-                <p class="section-subtitle">システムエンジニアリング事業</p>
+                <h2 class="section-title"><?php echo $current_service['title']; ?></h2>
+                <p class="section-subtitle"><?php echo esc_html($current_service['subtitle']); ?></p>
               </div>
               <p class="services-detail__description">
-                システムエンジニアリング事業とは、経験豊富なITエンジニアと技術を求める企業を最適にマッチングし、プロジェクト単位での技術支援・開発支援を行う常駐型のサービスです。<br><br>
-                FREEDGEには、Web系・インフラ系をはじめとした多様な領域に対応できるエンジニアが在籍しており、お客様の課題やニーズに応じた柔軟な体制を構築することが可能です。<br><br>
-                対応領域は、ネットワークやサーバー、データベース、セキュリティといったインフラ系から、フロントエンド・バックエンドなどのWeb系、さらにはシステム開発・運用などのソフトウェア領域、プロジェクトマネジメントまで、広範にわたります。
+                <?php echo $current_service['description']; ?>
               </p>
             </div>
-            .<div class="services-detail__image">
-              <img src="<?php echo get_template_directory_uri(); ?>/image/service-image-01.webp" alt="システムエンジニアリング事業イメージ">
+            <div class="services-detail__image">
+              <img src="<?php echo get_template_directory_uri(); ?>/image/<?php echo $current_service['image']; ?>" alt="<?php echo esc_attr($current_service['alt']); ?>">
             </div>
           </div>
           <div class="services-detail__feature">
             <h3 class="services-detail__feature-title">features</h3>
             <p class="services-detail__feature-subtitle">特徴</p>
             <ul class="services-detail__feature-list">
+              <?php if ($feature_head_1 && $feature_description_1) : ?>
               <li class="services-detail__feature-item">
                 <p class="services-detail__feature-item-number">01</p>
                 <p class="services-detail__feature-item-head">
-                  豊富な人材と<br>広範な技術領域への対応
+                  <?php echo nl2br(esc_html($feature_head_1)); ?>
                 </p>
                 <p class="services-detail__feature-item-description">
-                  Web系からインフラ、ソフトウェア開発、プロジェクトマネジメントまで、幅広い分野に精通したエンジニアが在籍。多様な案件に対して最適な人材をアサイン可能です。
+                  <?php echo nl2br(esc_html($feature_description_1)); ?>
                 </p>
               </li>
+              <?php endif; ?>
+              <?php if ($feature_head_2 && $feature_description_2) : ?>
               <li class="services-detail__feature-item">
                 <p class="services-detail__feature-item-number">02</p>
                 <p class="services-detail__feature-item-head">
-                  企業ごとの課題に応じた<br>柔軟なチーム編成
+                  <?php echo nl2br(esc_html($feature_head_2)); ?>
                 </p>
                 <p class="services-detail__feature-item-description">
-                  常駐型の体制だからこそ、プロジェクト単位で企業のニーズに合わせた最適なチーム構成が可能。必要なスキルセットや開発フェーズに応じて柔軟に対応します。
+                  <?php echo nl2br(esc_html($feature_description_2)); ?>
                 </p>
               </li>
+              <?php endif; ?>
+              <?php if ($feature_head_3 && $feature_description_3) : ?>
               <li class="services-detail__feature-item">
                 <p class="services-detail__feature-item-number">03</p>
                 <p class="services-detail__feature-item-head">
-                  経験に裏打ちされた<br>安心のマッチング体制
+                  <?php echo nl2br(esc_html($feature_head_3)); ?>
                 </p>
                 <p class="services-detail__feature-item-description">
-                  経験豊富なエンジニアのリソースと、現場理解のあるマッチング体制により、技術力だけでなく“現場で本当に活躍できる人材”をご提案します。
+                  <?php echo nl2br(esc_html($feature_description_3)); ?>
                 </p>
               </li>
+              <?php endif; ?>
             </ul>
           </div>
         </div>
-        <div class="services-detail__panel" id="service2">
-          <div class="services-detail__columns">
-            <div class="services-detail__text">
-              <div class="section-title-contents section-title-contents--services-detail">
-                <h2 class="section-title">SYSTEM ENGINEERING<br>SERVICES</h2>
-                <p class="section-subtitle">システムエンジニアリング事業</p>
-              </div>
-              <p class="services-detail__description">
-                システムエンジニアリング事業とは、経験豊富なITエンジニアと技術を求める企業を最適にマッチングし、プロジェクト単位での技術支援・開発支援を行う常駐型のサービスです。<br><br>
-                FREEDGEには、Web系・インフラ系をはじめとした多様な領域に対応できるエンジニアが在籍しており、お客様の課題やニーズに応じた柔軟な体制を構築することが可能です。<br><br>
-                対応領域は、ネットワークやサーバー、データベース、セキュリティといったインフラ系から、フロントエンド・バックエンドなどのWeb系、さらにはシステム開発・運用などのソフトウェア領域、プロジェクトマネジメントまで、広範にわたります。
-              </p>
-            </div>
-            .<div class="services-detail__image">
-              <img src="<?php echo get_template_directory_uri(); ?>/image/service-image-01.webp" alt="システムエンジニアリング事業イメージ">
-            </div>
-          </div>
-          <div class="services-detail__feature">
-            <h3 class="services-detail__feature-title">features</h3>
-            <p class="services-detail__feature-subtitle">特徴</p>
-            <ul class="services-detail__feature-list">
-              <li class="services-detail__feature-item">
-                <p class="services-detail__feature-item-number">01</p>
-                <p class="services-detail__feature-item-head">
-                  豊富な人材と<br>広範な技術領域への対応
-                </p>
-                <p class="services-detail__feature-item-description">
-                  Web系からインフラ、ソフトウェア開発、プロジェクトマネジメントまで、幅広い分野に精通したエンジニアが在籍。多様な案件に対して最適な人材をアサイン可能です。
-                </p>
-              </li>
-              <li class="services-detail__feature-item">
-                <p class="services-detail__feature-item-number">02</p>
-                <p class="services-detail__feature-item-head">
-                  企業ごとの課題に応じた<br>柔軟なチーム編成
-                </p>
-                <p class="services-detail__feature-item-description">
-                  常駐型の体制だからこそ、プロジェクト単位で企業のニーズに合わせた最適なチーム構成が可能。必要なスキルセットや開発フェーズに応じて柔軟に対応します。
-                </p>
-              </li>
-              <li class="services-detail__feature-item">
-                <p class="services-detail__feature-item-number">03</p>
-                <p class="services-detail__feature-item-head">
-                  経験に裏打ちされた<br>安心のマッチング体制
-                </p>
-                <p class="services-detail__feature-item-description">
-                  経験豊富なエンジニアのリソースと、現場理解のあるマッチング体制により、技術力だけでなく“現場で本当に活躍できる人材”をご提案します。
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="services-detail__panel" id="service3">
-          <div class="services-detail__columns">
-            <div class="services-detail__text">
-              <div class="section-title-contents section-title-contents--services-detail">
-                <h2 class="section-title">SYSTEM ENGINEERING<br>SERVICES</h2>
-                <p class="section-subtitle">システムエンジニアリング事業</p>
-              </div>
-              <p class="services-detail__description">
-                システムエンジニアリング事業とは、経験豊富なITエンジニアと技術を求める企業を最適にマッチングし、プロジェクト単位での技術支援・開発支援を行う常駐型のサービスです。<br><br>
-                FREEDGEには、Web系・インフラ系をはじめとした多様な領域に対応できるエンジニアが在籍しており、お客様の課題やニーズに応じた柔軟な体制を構築することが可能です。<br><br>
-                対応領域は、ネットワークやサーバー、データベース、セキュリティといったインフラ系から、フロントエンド・バックエンドなどのWeb系、さらにはシステム開発・運用などのソフトウェア領域、プロジェクトマネジメントまで、広範にわたります。
-              </p>
-            </div>
-            .<div class="services-detail__image">
-              <img src="<?php echo get_template_directory_uri(); ?>/image/service-image-01.webp" alt="システムエンジニアリング事業イメージ">
-            </div>
-          </div>
-          <div class="services-detail__feature">
-            <h3 class="services-detail__feature-title">features</h3>
-            <p class="services-detail__feature-subtitle">特徴</p>
-            <ul class="services-detail__feature-list">
-              <li class="services-detail__feature-item">
-                <p class="services-detail__feature-item-number">01</p>
-                <p class="services-detail__feature-item-head">
-                  豊富な人材と<br>広範な技術領域への対応
-                </p>
-                <p class="services-detail__feature-item-description">
-                  Web系からインフラ、ソフトウェア開発、プロジェクトマネジメントまで、幅広い分野に精通したエンジニアが在籍。多様な案件に対して最適な人材をアサイン可能です。
-                </p>
-              </li>
-              <li class="services-detail__feature-item">
-                <p class="services-detail__feature-item-number">02</p>
-                <p class="services-detail__feature-item-head">
-                  企業ごとの課題に応じた<br>柔軟なチーム編成
-                </p>
-                <p class="services-detail__feature-item-description">
-                  常駐型の体制だからこそ、プロジェクト単位で企業のニーズに合わせた最適なチーム構成が可能。必要なスキルセットや開発フェーズに応じて柔軟に対応します。
-                </p>
-              </li>
-              <li class="services-detail__feature-item">
-                <p class="services-detail__feature-item-number">03</p>
-                <p class="services-detail__feature-item-head">
-                  経験に裏打ちされた<br>安心のマッチング体制
-                </p>
-                <p class="services-detail__feature-item-description">
-                  経験豊富なエンジニアのリソースと、現場理解のあるマッチング体制により、技術力だけでなく“現場で本当に活躍できる人材”をご提案します。
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <?php
+            endwhile;
+            wp_reset_postdata();
+          endif;
+        endforeach;
+        ?>
       </div>
     </div>
   </section>
   
 
-  <!-- FREEDGEの3つの事業領域 -->
+  <!-- プロジェクト実績 -->
   <section class="services-engagements" id="services-engagements">
     <div class="services-engagements__container container">
-      <div class="section-title-contents section-title-contents--services-engagements">
-        <h2 class="section-title">key engagements</h2>
-        <p class="section-subtitle">システムエンジニアリング事業のプロジェクト実績</p>
-      </div>
-      <div class="services-engagements__body">
-        <div class="services-engagements__columns">
-          <div class="services-engagements__item">
-            <div class="services-engagements__item-columns">
-              <h3 class="services-engagements__item-title">某通信キャリア向けインフラ構築支援</h3>
-              <div class="services-engagements__item-contents">
-                <div class="services-engagements__item-content">
-                  <p class="services-engagements__item-tag">開発環境</p>
-                  <p class="services-engagements__item-description">
-                    JavaScript / TypeScript / Vue.js / React  
-                  </p>
-                </div>
-                <div class="services-engagements__item-content">
-                  <p class="services-engagements__item-tag">開発工程</p>
-                  <p class="services-engagements__item-description">
-                    基本設計 / 詳細設計 / 検証 / 構築    
-                  </p>
-                </div>
-                <div class="services-engagements__item-content">
-                  <p class="services-engagements__item-tag">対応期間  </p>
-                  <p class="services-engagements__item-description">
-                    6ヶ月  
-                  </p>
+      <?php
+      // サービスの配列を定義（ID、スラッグ、サブタイトル）
+      $engagements_services = array(
+        array('id' => 'services-engagements1', 'slug' => 'system-engineering', 'subtitle' => 'システムエンジニアリング事業のプロジェクト実績', 'class' => 'active'),
+        array('id' => 'services-engagements2', 'slug' => 'system-integration', 'subtitle' => 'システムインテグレーション事業のプロジェクト実績', 'class' => ''),
+        array('id' => 'services-engagements3', 'slug' => 'facility', 'subtitle' => 'ファシリティ事業のプロジェクト実績', 'class' => '')
+      );
+      
+      // 各サービスをループ
+      foreach ($engagements_services as $engagement_service) :
+        // スラッグでservices投稿を取得
+        $args = array(
+          'post_type' => 'services',
+          'name' => $engagement_service['slug'],
+          'posts_per_page' => 1
+        );
+        $engagement_query = new WP_Query($args);
+        
+        if ($engagement_query->have_posts()) :
+          while ($engagement_query->have_posts()) : $engagement_query->the_post();
+      ?>
+      <div class="sevices-engagements__contents <?php echo esc_attr($engagement_service['class']); ?>" id="<?php echo esc_attr($engagement_service['id']); ?>">
+        <div class="section-title-contents section-title-contents--services-engagements">
+          <h2 class="section-title">key engagements</h2>
+          <p class="section-subtitle"><?php echo esc_html($engagement_service['subtitle']); ?></p>
+        </div>
+        <div class="services-engagements__body">
+          <div class="services-engagements__columns">
+            <?php
+            // プロジェクト実績を1〜9までループ
+            for ($i = 1; $i <= 9; $i++) :
+              $title = get_field('service_engagements_title_' . $i);
+              $development = get_field('service_engagements_development_' . $i);
+              $flow = get_field('service_engagements_flow_' . $i);
+              $period = get_field('service_engagements_period_' . $i);
+              
+              // タイトルがある場合のみ表示
+              if ($title) :
+            ?>
+            <div class="services-engagements__item">
+              <div class="services-engagements__item-columns">
+                <h3 class="services-engagements__item-title"><?php echo esc_html($title); ?></h3>
+                <div class="services-engagements__item-contents">
+                  <?php if ($development) : ?>
+                  <div class="services-engagements__item-content">
+                    <p class="services-engagements__item-tag">開発環境</p>
+                    <p class="services-engagements__item-description">
+                      <?php echo esc_html($development); ?>
+                    </p>
+                  </div>
+                  <?php endif; ?>
+                  <?php if ($flow) : ?>
+                  <div class="services-engagements__item-content">
+                    <p class="services-engagements__item-tag">開発工程</p>
+                    <p class="services-engagements__item-description">
+                      <?php echo esc_html($flow); ?>
+                    </p>
+                  </div>
+                  <?php endif; ?>
+                  <?php if ($period) : ?>
+                  <div class="services-engagements__item-content">
+                    <p class="services-engagements__item-tag">対応期間</p>
+                    <p class="services-engagements__item-description">
+                      <?php echo esc_html($period); ?>
+                    </p>
+                  </div>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>
+            <?php
+              endif;
+            endfor;
+            ?>
           </div>
         </div>
       </div>
+      <?php
+          endwhile;
+          wp_reset_postdata();
+        endif;
+      endforeach;
+      ?>
     </div>
   </section>
   

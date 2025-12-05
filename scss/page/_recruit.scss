@@ -100,12 +100,43 @@
 }
 
 @include mq(md) {
+  .recruit {
+    margin-top: rem(80);
+  }
+  .recruit__contents {
+    padding: rem(20) rem(20);
+  }
+  .section-title-contents.section-title-contents--recruit {
+    margin-bottom: rem(40);
+  }
   .recruit__images {
     width: 100%;
     position: static;
+    transform: none;
+    margin-bottom: rem(32);
   }
   .recruit__columns {
     width: 100%;
+    flex-direction: column;
+  }
+  .recruit__catchphrase {
+    font-size: rem(24);
+    gap: rem(8);
+    margin-bottom: rem(24);
+  }
+  .recruit__description {
+    margin-bottom: rem(20);
+  }
+  .recruit__tag {
+    height: auto;
+    width: 100%;
+    min-height: auto;
+    border-left: none;
+    border-top: 1px solid #DFE7EF ;
+    align-items: center;
+    justify-content: center;
+    padding-top: rem(20);
+    padding-left: 0;
   }
   
 }

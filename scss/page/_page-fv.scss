@@ -56,6 +56,7 @@
   width: 100%;
   z-index: -1;
   @include mq(md) {
-    max-width: rem(340);
+    max-width: 100%;
+    width: 40%;
   }
 }

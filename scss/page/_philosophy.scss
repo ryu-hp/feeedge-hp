@@ -85,3 +85,14 @@
   width: calc(440 / 1920 * 100%);
   bottom:0;
 }
+
+@include mq(md) {
+  .philosophy__button {
+    text-align: center;
+  }
+  .philosophy__catchphrase {
+    font-size: rem(28);
+    gap: rem(8);
+    margin-bottom: rem(24);
+  }
+}

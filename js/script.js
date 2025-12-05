@@ -62,24 +62,78 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // サービスページのタブ切り替え
-  const serviceTabs = document.querySelectorAll('.services-detail__tab');
-  const servicePanels = document.querySelectorAll('.services-detail__panel');
+  const serviceIntroTabs = document.querySelectorAll('.services-intro__tab');
+  const serviceDetailPanels = document.querySelectorAll('.services-detail__panel');
+  const serviceEngagementsPanels = document.querySelectorAll('.sevices-engagements__contents');
 
-  if (serviceTabs.length > 0 && servicePanels.length > 0) {
-    serviceTabs.forEach(tab => {
+  // ハッシュとタブの対応マップ
+  const hashToTabMap = {
+    '#se-service': 'service1',
+    '#si-service': 'service2',
+    '#fa-service': 'service3'
+  };
+
+  // タブを切り替える関数
+  function switchTab(targetId) {
+    if (!targetId) return;
+    
+    // すべてのタブから active クラスを削除
+    serviceIntroTabs.forEach(t => t.classList.remove('active'));
+    
+    // 対象のタブに active クラスを追加
+    const targetTab = document.querySelector(`.services-intro__tab[data-target="${targetId}"]`);
+    if (targetTab) {
+      targetTab.classList.add('active');
+    }
+    
+    // サービス詳細パネルの切り替え
+    if (serviceDetailPanels.length > 0) {
+      serviceDetailPanels.forEach(p => p.classList.remove('active'));
+      const targetDetailPanel = document.getElementById(targetId);
+      if (targetDetailPanel) {
+        targetDetailPanel.classList.add('active');
+      }
+    }
+    
+    // プロジェクト実績パネルの切り替え
+    if (serviceEngagementsPanels.length > 0) {
+      serviceEngagementsPanels.forEach(p => p.classList.remove('active'));
+      // service1 → services-engagements1 に変換
+      const engagementsId = targetId.replace('service', 'services-engagements');
+      const targetEngagementsPanel = document.getElementById(engagementsId);
+      if (targetEngagementsPanel) {
+        targetEngagementsPanel.classList.add('active');
+      }
+    }
+  }
+
+  // ページ読み込み時にハッシュをチェック
+  function checkHashOnLoad() {
+    const hash = window.location.hash;
+    if (hash && hashToTabMap[hash]) {
+      const targetId = hashToTabMap[hash];
+      switchTab(targetId);
+    }
+  }
+
+  // ハッシュ変更時の処理
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash;
+    if (hash && hashToTabMap[hash]) {
+      const targetId = hashToTabMap[hash];
+      switchTab(targetId);
+    }
+  });
+
+  if (serviceIntroTabs.length > 0) {
+    // ページ読み込み時にハッシュをチェック
+    checkHashOnLoad();
+    
+    // タブクリック時の処理
+    serviceIntroTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        const targetId = tab.dataset.tab;
-        
-        // すべてのタブとパネルから active クラスを削除
-        serviceTabs.forEach(t => t.classList.remove('active'));
-        servicePanels.forEach(p => p.classList.remove('active'));
-        
-        // クリックされたタブと対応するパネルに active クラスを追加
-        tab.classList.add('active');
-        const targetPanel = document.getElementById(targetId);
-        if (targetPanel) {
-          targetPanel.classList.add('active');
-        }
+        const targetId = tab.dataset.target;
+        switchTab(targetId);
       });
     });
   }

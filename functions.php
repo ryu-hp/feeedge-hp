@@ -189,3 +189,9 @@ class Footer_Walker_Nav_Menu extends Walker_Nav_Menu {
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }
 }
+
+// Contact Form 7 の自動 <p><br> を削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+    return false;
+}
