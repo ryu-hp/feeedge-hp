@@ -2506,6 +2506,9 @@ body.menu-open .mobile-menu {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+  .section-title-contents--services-detail .section-title {
+    font-size: 2.5rem;
+  }
   .services-detail__feature-list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2535,6 +2538,7 @@ body.menu-open .mobile-menu {
   }
   .services-engagements__item-title {
     font-size: 1rem;
+    line-height: 1.3;
   }
   .services-engagements__item-contents {
     border-left: none;
@@ -2813,6 +2817,7 @@ body.menu-open .mobile-menu {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: 101%;
+  margin: 0;
 }
 
 .form-item__submit-content:hover .form-item__input--submit {
