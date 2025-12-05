@@ -262,6 +262,26 @@ body.is-scrolled .header {
 .mobile-menu a:hover {
   color: $color-theme;
 }
+.mobile-menu .sub-menu a {
+  font-size: rem(14);
+  position: relative;
+  padding-top: rem(8);
+  padding-bottom: rem(8);
+}
+.mobile-menu .sub-menu a::before {
+  content: "";
+  position: absolute;
+  left: rem(-16);
+  width: rem(10);
+  height: rem(10);
+  border-radius: 2px;
+  background-color: $color-theme;
+  top: calc(rem(8) + (rem(14) / 2) - rem(1));
+}
+.mobile-menu .sub-menu li {
+  border-bottom: none;
+  padding-left: rem(16);
+}
 
 // 外部リンク（異なるドメイン）のスタイル
 .mobile-menu .external-link a {
@@ -293,7 +313,7 @@ body.is-scrolled .header {
   display: block;
   text-align: center;
   padding: rem(14) rem(24);
-  background-color: $color-theme;
+  background: $gradient-freedge;
   color: $color-white !important;
   border-radius: 50px;
   font-weight: $bold;
@@ -301,7 +321,7 @@ body.is-scrolled .header {
 }
 
 .mobile-menu .contact-link a:hover {
-  background-color: darken(#0172D5, 10%);
+  opacity: 0.8;
 }
 
 // メニューが開いている時のbodyスクロール制御

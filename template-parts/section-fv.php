@@ -1,5 +1,11 @@
 <!-- ファーストビューセクション -->
 <section class="fv" id="fv">
+  <div class="fv__video-container">
+    <video class="fv__video" autoplay muted loop playsinline>
+      <source src="<?php echo get_template_directory_uri(); ?>/video/freedge-top-movie.mov" type="video/mp4">
+    </video>
+    <div class="fv__overlay"></div>
+  </div>
   <div class="fv__container">
     <div class="fv__content">
       <h1 class="fv__title">ITで広がる、自由な未来</h1>
