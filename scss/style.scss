@@ -20,6 +20,13 @@
 @use "./page/page-services";
 @use "./page/page-contact";
 
+// Archive & Single pages
+@use "./page/archive";
+@use "./page/single";
+@use "./page/taxonomy";
+@use "./page/search";
+@use "./page/404" as error404;
+
 // Common components
 @use "./page/page-fv";
 @use "./page/section";
