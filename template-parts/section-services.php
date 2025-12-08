@@ -44,7 +44,7 @@
                   Web開発からインフラ構築まで、幅広い分野のスペシャリストが最適な技術と経験で多様なニーズに柔軟に対応します。
                 </p>
                 <div class="services__item-btn">
-                  <a href="<?php echo esc_url(home_url('/services/#se-service')); ?>" class="button">more</a>
+                  <a href="<?php echo esc_url(home_url('/services#services-detail?service1')); ?>" class="button">more</a>
                 </div>
               </div>
               <div class="services__item-image">
@@ -69,7 +69,7 @@
                   システムの企画から運用まで、一貫したITソリューションでお客様の課題解決を支援します。
                 </p>
                 <div class="services__item-btn">
-                  <a href="<?php echo esc_url(home_url('/services/#si-service')); ?>" class="button">more</a>
+                  <a href="<?php echo esc_url(home_url('/services#services-detail?service2')); ?>" class="button">more</a>
                 </div>
               </div>
               <div class="services__item-image">
@@ -94,7 +94,7 @@
                   レイアウト変更など設備工事の施工図作成から納品、管理までお客様に合わせ対応いたします。
                 </p>
                 <div class="services__item-btn">
-                  <a href="<?php echo esc_url(home_url('/services/#fa-service')); ?>" class="button">more</a>
+                  <a href="<?php echo esc_url(home_url('/services#services-detail?service3')); ?>" class="button">more</a>
                 </div>
               </div>
               <div class="services__item-image">

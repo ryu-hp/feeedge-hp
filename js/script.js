@@ -73,6 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
     '#fa-service': 'service3'
   };
 
+  // URLパラメータとタブの対応マップ
+  const paramToTabMap = {
+    'service1': 'service1',
+    'service2': 'service2',
+    'service3': 'service3'
+  };
+
   // タブを切り替える関数
   function switchTab(targetId) {
     if (!targetId) return;
@@ -107,20 +114,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // URLパラメータからタブIDを取得
+  function getTabIdFromUrl() {
+    const hash = window.location.hash;
+    
+    // ハッシュにパラメータが含まれている場合 (#services-detail?service1)
+    if (hash.includes('?')) {
+      const param = hash.split('?')[1];
+      if (paramToTabMap[param]) {
+        return paramToTabMap[param];
+      }
+    }
+    
+    // ハッシュのみの場合 (#se-service)
+    if (hashToTabMap[hash]) {
+      return hashToTabMap[hash];
+    }
+    
+    return null;
+  }
+
   // ページ読み込み時にハッシュをチェック
   function checkHashOnLoad() {
-    const hash = window.location.hash;
-    if (hash && hashToTabMap[hash]) {
-      const targetId = hashToTabMap[hash];
+    const targetId = getTabIdFromUrl();
+    if (targetId) {
       switchTab(targetId);
+      
+      // services-detailセクションまでスクロール
+      setTimeout(() => {
+        const servicesDetailSection = document.getElementById('services-detail');
+        if (servicesDetailSection) {
+          const header = document.querySelector('.header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const targetPosition = servicesDetailSection.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
   }
 
   // ハッシュ変更時の処理
   window.addEventListener('hashchange', () => {
-    const hash = window.location.hash;
-    if (hash && hashToTabMap[hash]) {
-      const targetId = hashToTabMap[hash];
+    const targetId = getTabIdFromUrl();
+    if (targetId) {
       switchTab(targetId);
     }
   });

@@ -5,6 +5,10 @@
   margin-top: rem(200);
 }
 
+.services__top-text .section-title {
+  font-size: rem(140);
+}
+
 .services__top-contents {
   position: relative;
   margin-bottom: rem(300);
@@ -38,7 +42,7 @@
 }
 
 .services__catchphrase {
-  font-size: rem(60);
+  font-size: rem(48);
   font-weight: $bold;
   display: flex;
   flex-direction: column;
@@ -132,6 +136,9 @@
 @include mq(md) {
   .services {
     margin-top: rem(40);
+  }
+  .services__top-text .section-title {
+    font-size: rem(52);
   }
   .services__catchphrase {
     font-size: rem(28);

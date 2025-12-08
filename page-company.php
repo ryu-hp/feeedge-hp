@@ -57,7 +57,7 @@ get_header();
                 すべての人にとっての自由の架け橋となる企業を目指します。
               </p>
               <div class="message__ceo-name">
-                <span class="message__ceo-name--position">代表取締役社長</span>
+                <span class="message__ceo-name--position">代表取締役</span>
                 <span class="message__ceo-name--main"><img src="<?php echo get_template_directory_uri(); ?>/image/ceo-name.webp" alt="松原充芳"></span>
               </div>
             </div>

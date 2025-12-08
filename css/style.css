@@ -1156,6 +1156,10 @@ body.menu-open .mobile-menu {
   margin-top: 12.5rem;
 }
 
+.services__top-text .section-title {
+  font-size: 8.75rem;
+}
+
 .services__top-contents {
   position: relative;
   margin-bottom: 18.75rem;
@@ -1201,7 +1205,7 @@ body.menu-open .mobile-menu {
 }
 
 .services__catchphrase {
-  font-size: 3.75rem;
+  font-size: 3rem;
   font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1322,6 +1326,9 @@ body.menu-open .mobile-menu {
 @media screen and (max-width: 767px) {
   .services {
     margin-top: 2.5rem;
+  }
+  .services__top-text .section-title {
+    font-size: 3.25rem;
   }
   .services__catchphrase {
     font-size: 1.75rem;
@@ -2231,6 +2238,8 @@ body.menu-open .mobile-menu {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .message__content {
@@ -2544,7 +2553,6 @@ body.menu-open .mobile-menu {
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  height: 428px;
 }
 
 .services-intro__tab-head {
