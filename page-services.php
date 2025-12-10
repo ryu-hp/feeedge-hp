@@ -225,9 +225,9 @@ get_header();
       <?php
       // サービスの配列を定義（ID、スラッグ、サブタイトル）
       $engagements_services = array(
-        array('id' => 'services-engagements1', 'slug' => 'system-engineering', 'subtitle' => 'システムエンジニアリング事業のプロジェクト実績', 'class' => 'active'),
-        array('id' => 'services-engagements2', 'slug' => 'system-integration', 'subtitle' => 'システムインテグレーション事業のプロジェクト実績', 'class' => ''),
-        array('id' => 'services-engagements3', 'slug' => 'facility', 'subtitle' => 'ファシリティ事業のプロジェクト実績', 'class' => '')
+        array('id' => 'services-engagements1', 'slug' => 'system-engineering', 'subtitle' => 'システムエンジニアリング事業', 'class' => 'active'),
+        array('id' => 'services-engagements2', 'slug' => 'system-integration', 'subtitle' => 'システムインテグレーション事業', 'class' => ''),
+        array('id' => 'services-engagements3', 'slug' => 'facility', 'subtitle' => 'ファシリティ事業', 'class' => '')
       );
       
       // 各サービスをループ
@@ -246,7 +246,7 @@ get_header();
       <div class="sevices-engagements__contents <?php echo esc_attr($engagement_service['class']); ?>" id="<?php echo esc_attr($engagement_service['id']); ?>">
         <div class="section-title-contents section-title-contents--services-engagements">
           <h2 class="section-title">key engagements</h2>
-          <p class="section-subtitle"><?php echo esc_html($engagement_service['subtitle']); ?></p>
+          <p class="section-subtitle"><?php echo esc_html($engagement_service['subtitle']); ?>の<br class="only-sp">プロジェクト実績</p>
         </div>
         <div class="services-engagements__body">
           <div class="services-engagements__columns">

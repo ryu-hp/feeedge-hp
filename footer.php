@@ -9,8 +9,8 @@
             <p class="section-subtitle">お問い合わせ</p>
           </div>
           <p class="footer__contact-description">
-            ソリューションやサービスに関するご質問やご相談<br>
-            株式会社FREEDGEについてご質問やお問い合わせはこちらから
+            ソリューションやサービスに関する<br class="only-sp">ご質問やご相談<br>
+            株式会社FREEDGEについて<br class="only-sp">ご質問やお問い合わせはこちらから
           </p>
         </div>
         <div class="footer__contact-btn">

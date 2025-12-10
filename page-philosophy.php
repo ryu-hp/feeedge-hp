@@ -25,11 +25,11 @@ get_header();
           </p>
           <p class="mission__text">
             FREEDGEは、「自由」をキーワードに、<br>
-            社会・お客様・エンジニアのあらゆる可能性を広げることを使命とし、<br>
-            求められるものを超えて“驚き”と“感動”を生み出すエンジニア集団として、<br>
-            現在・過去・未来の流れを読み解きながら、<br>
+            社会・お客様・エンジニアの<br class="only-sp">あらゆる可能性を広げることを<br class="only-sp">使命とし、<br>
+            求められるものを超えて<br class="only-sp">“驚き”と“感動”を生み出す<br class="only-sp">エンジニア集団として、<br>
+            現在・過去・未来の流れを<br class="only-sp">読み解きながら、<br>
             自らの道＝“自流”を切り拓いていきます。<br>
-            関わるすべての人が、今よりも自由になれる社会の実現を、<br>
+            関わるすべての人が、<br class="only-sp">今よりも自由になれる社会の実現を、<br>
             ITの力で支えていきます。
           </p>
         </div>
@@ -50,19 +50,19 @@ get_header();
         </div>
         <div class="vision__content">
           <p class="vision__text">
-            私たちは、エンジニアが自分らしく挑戦し、<br>
+            私たちは、<br class="only-sp">エンジニアが自分らしく挑戦し、<br>
             成長できる環境こそが、<br>
             価値あるソリューションを生み出す原動力だと考えています。
           </p>
           <p class="vision__text">
-            ただ“求められたもの”を形にするだけでなく、<br>
+            ただ“求められたもの”を<br class="only-sp">形にするだけでなく、<br>
             そこに<span class="weight-bold">「驚き」</span>と<span class="weight-bold">「感動」</span>を加え、期待を超える成果を追求する。
           </p>
           <p class="vision__text">
-            そのために、過去と現在を学び、未来を見据えながら、<br>
-            自分たちの“自流”を築いていく姿勢を大切にしています。<br>
-            変化を恐れず、技術と価値を自ら創造する、<br>
-            自由でしなやかなエンジニア集団を目指します。
+            そのために、過去と現在を学び、<br class="only-sp">未来を見据えながら、<br>
+            自分たちの“自流”を築いていく姿勢を<br class="only-sp">大切にしています。<br>
+            変化を恐れず、<br class="only-sp">技術と価値を自ら創造する、<br>
+            自由でしなやかなエンジニア集団を<br class="only-sp">目指します。
           </p>
         </div>
       </div>

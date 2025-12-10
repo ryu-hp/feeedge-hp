@@ -1,8 +1,9 @@
 <!-- ファーストビューセクション -->
 <section class="fv" id="fv">
   <div class="fv__video-container">
-    <video class="fv__video" autoplay muted loop playsinline>
-      <source src="<?php echo get_template_directory_uri(); ?>/video/freedge-top-movie.mov" type="video/mp4">
+    <video class="fv__video" autoplay muted loop playsinline preload="auto" poster="<?php echo get_template_directory_uri(); ?>/image/mv.jpg">
+      <source src="<?php echo get_template_directory_uri(); ?>/video/freedge-top-movie.mp4" type="video/mp4">
+      <source src="<?php echo get_template_directory_uri(); ?>/video/freedge-top-movie.mov" type="video/quicktime">
     </video>
     <div class="fv__overlay"></div>
   </div>

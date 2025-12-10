@@ -74,6 +74,7 @@
   width: calc(686 / 1920 * 100%);
   top:0;
   transform: translateY(calc(239 / 404 * 100% * (-1)));
+  z-index: 1;
 }
 .philosophy__bgimage--bottom-left {
   left: 0;
