@@ -2,7 +2,6 @@
 
 // PHILOSOPHY（企業理念）セクション
 .philosophy {
-  background-color: $color-white;
   position: relative;
   z-index: 1;
 }
@@ -22,10 +21,6 @@
   display: flex;
   justify-content: space-between;
   gap: rem(40);
-  @include mq(md) {
-    flex-direction: column-reverse;
-    gap: rem(32);
-  }
 }
 
 .philosophy__images {
@@ -88,12 +83,25 @@
 }
 
 @include mq(md) {
-  .philosophy__button {
-    text-align: center;
+  .philosophy::after {
+    height: 50%;
+    bottom: auto;
+    top: 0;
+  }
+  .philosophy__columns {
+    flex-direction: column;
+    gap: rem(40);
   }
   .philosophy__catchphrase {
     font-size: rem(28);
     gap: rem(8);
     margin-bottom: rem(24);
+  }
+  .philosophy__bgimage--bottom-left {
+    top: 33%;
+    bottom: auto;
+  }
+  .philosophy__bgimage--bottom-right {
+    width: calc(149 / 393 * 100%);
   }
 }

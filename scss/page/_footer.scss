@@ -77,10 +77,6 @@
 .footer__columns {
   display: flex;
   justify-content: space-between;
-  @include mq(md) {
-    flex-direction: column;
-    gap: rem(40);
-  }
 }
 .footer__company-info {
   display: flex;
@@ -199,7 +195,7 @@
   font-family: $second-font-family;
 
   @include mq(md) {
-    font-size: rem(14);
+    font-size: rem(13);
   }
 }
 
@@ -225,16 +221,52 @@
   .section-title-contents.section-title-contents--contact {
     margin-bottom: rem(32);
   }
+  .footer__content {
+    padding-top: rem(24);
+    padding-bottom: rem(49);
+  }
+  .footer__contact {
+    padding-bottom: rem(24);
+  }
+  .footer__contact-description {
+    font-size: rem(14);
+    line-height: calc(26 / 14);
+  }
   .footer__contact-btn {
     position: absolute;
     top: 0;
     right: 0;
+    width: rem(75);
+    height: rem(50);
   }
+  .footer__contact-image {
+    width: calc(238 / 345 * 100%);
+  }
+  .footer__columns {
+    flex-direction: column-reverse;
+    gap: rem(64);
+  }
+  .footer__logo {
+    margin-bottom: rem(20);
+  }
+  .footer__address {
+    font-size: rem(12);
+    line-height: calc(22 / 12);
+    margin-bottom: rem(24);
+  }
+
   .footer__menu {
     flex-direction: column;
-    gap: rem(40);
+    gap: rem(24);
+    align-items: flex-start;
+  }
+  .footer__menu > li > a {
+    gap: rem(8);
   }
   .footer__menu > li {
-    gap: rem(20);
+    gap: rem(16);
+  }
+  .footer__menu .sub-menu {
+    gap:rem(24);
   }
 }

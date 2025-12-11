@@ -51,9 +51,13 @@
                 <div class="services__item-image-item">
                   <img src="<?php echo get_template_directory_uri(); ?>/image/top-services-image-01.webp" alt="システムエンジニアリング事業">
                 </div>
-                <p class="services__item-job-text">
+                <p class="services__item-job-text services__item-job-text--pc">
                   <span class="services__item-job-text--color">system engi</span>
                   <span class="services__item-job-text--white">Neering services</span>
+                </p>
+                <p class="services__item-job-text services__item-job-text--sp">
+                  <span class="services__item-job-text--color">system engineering</span>
+                  <span class="services__item-job-text--white">services</span>
                 </p>
               </div>
             </div>
@@ -76,9 +80,13 @@
                 <div class="services__item-image-item">
                   <img src="<?php echo get_template_directory_uri(); ?>/image/top-services-image-02.webp" alt="システムインテグレーション事業">
                 </div>
-                <p class="services__item-job-text">
+                <p class="services__item-job-text services__item-job-text--pc">
                   <span class="services__item-job-text--color">system inte</span>
                   <span class="services__item-job-text--white">gration services</span>
+                </p>
+                <p class="services__item-job-text services__item-job-text--sp">
+                  <span class="services__item-job-text--color">system integration</span>
+                  <span class="services__item-job-text--white">services</span>
                 </p>
               </div>
             </div>

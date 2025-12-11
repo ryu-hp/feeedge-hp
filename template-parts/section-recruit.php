@@ -25,6 +25,9 @@
             <div class="recruit__tag-icon">
               <img src="<?php echo get_template_directory_uri(); ?>/image/page-change-blue-icon.png" alt="ページ遷移アイコン">
             </div>
+            <div class="recruit__btn">
+              <span class="button">more</span>
+            </div>
           </div>
         </div>
       </a>

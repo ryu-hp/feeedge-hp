@@ -67,9 +67,6 @@
   bottom: calc(74 / 311 * 100%);
   right: calc(80 / 1051 * 100%);
   color: $color-white;
-  @include mq(md) {
-    font-size: rem(40);
-  }
 }
 
 .fv__subtitle {
@@ -92,10 +89,15 @@
   .fv__content {
     width: calc(100% - 40px);
     left: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: rem(20);
+  }
+  .fv__subtitle {
+    width: calc(243 / 393 * 100vw);
   }
   .fv__title {
     position: static;
-    margin-bottom: rem(20);
-    font-size: rem(28);
+    font-size: rem(16);
   }
 }
