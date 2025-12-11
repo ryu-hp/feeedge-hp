@@ -3,12 +3,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerToggle = document.querySelector('.header__toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   const body = document.body;
+  const logo = document.querySelector('.header__logo .custom-logo');
+  let originalLogoSrc = '';
+  let originalLogoSrcset = '';
+
+  // ロゴの元の画像パスを保存
+  if (logo) {
+    originalLogoSrc = logo.getAttribute('src');
+    originalLogoSrcset = logo.getAttribute('srcset') || '';
+  }
 
   if (headerToggle && mobileMenu) {
     headerToggle.addEventListener('click', () => {
       headerToggle.classList.toggle('is-active');
       mobileMenu.classList.toggle('is-open');
       body.classList.toggle('menu-open');
+
+      // ロゴ画像の切り替え
+      if (logo) {
+        if (body.classList.contains('menu-open')) {
+          // メニューが開いている時は白ロゴに変更
+          const themeUrl = document.body.getAttribute('data-theme-url') || '';
+          logo.setAttribute('src', themeUrl + '/image/logo-white.webp');
+          logo.removeAttribute('srcset');
+        } else {
+          // メニューが閉じている時は元のロゴに戻す
+          logo.setAttribute('src', originalLogoSrc);
+          if (originalLogoSrcset) {
+            logo.setAttribute('srcset', originalLogoSrcset);
+          }
+        }
+      }
     });
 
     // モバイルメニューのリンクをクリックしたらメニューを閉じる
@@ -18,6 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         headerToggle.classList.remove('is-active');
         mobileMenu.classList.remove('is-open');
         body.classList.remove('menu-open');
+
+        // ロゴを元に戻す
+        if (logo) {
+          logo.setAttribute('src', originalLogoSrc);
+          if (originalLogoSrcset) {
+            logo.setAttribute('srcset', originalLogoSrcset);
+          }
+        }
       });
     });
   }
@@ -60,6 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('is-scrolled');
     }
   });
+
+  // FVビデオのポスター画像をデバイスに応じて切り替え
+  const fvVideo = document.querySelector('.fv__video');
+  if (fvVideo) {
+    const themeUrl = document.body.getAttribute('data-theme-url') || '';
+    
+    function updateVideoPoster() {
+      if (window.innerWidth <= 767) {
+        // スマホ表示の場合
+        fvVideo.setAttribute('poster', themeUrl + '/image/fv-bg-sp.webp');
+      } else {
+        // PC表示の場合
+        fvVideo.setAttribute('poster', themeUrl + '/image/mv.jpg');
+      }
+    }
+    
+    // 初回実行
+    updateVideoPoster();
+    
+    // リサイズ時にも実行
+    window.addEventListener('resize', updateVideoPoster);
+  }
 
   // サービスページのタブ切り替え
   const serviceIntroTabs = document.querySelectorAll('.services-intro__tab');
