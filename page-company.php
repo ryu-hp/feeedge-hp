@@ -29,7 +29,8 @@ get_header();
                 <span>人々をもっと自由に</span>
               </p>
               <div class="message__figure">
-                <div class="message__circle-contents message__circle-contents--small message__circle-contents--left">
+                <img src="<?php echo get_template_directory_uri(); ?>/image/freedge-compay-image.webp" alt="">
+                <!-- <div class="message__circle-contents message__circle-contents--small message__circle-contents--left">
                   <div class="message__circle-text">
                     <p class="message__circle-text--main">freedom</p>
                     <p class="message__circle-text--sub">自由</p>
@@ -45,7 +46,7 @@ get_header();
                   <div class="message__circle-text">
                     <p class="message__circle-text--main"><span class="message__circle-text--main--small">=</span>freedge</p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="message__right">
