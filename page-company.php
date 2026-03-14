@@ -20,7 +20,7 @@ get_header();
         </div>
         <div class="message__body">
           <div class="message__ceo-image">
-            <img src="<?php echo get_template_directory_uri(); ?>/image/ceo-image.webp" alt="代表取締役社長　松原充芳">
+            <img src="<?php echo get_template_directory_uri(); ?>/image/compay-ceo-image-02.webp" alt="代表取締役社長　松原充芳">
           </div>
           <div class="message__content">
             <div class="message__left">
