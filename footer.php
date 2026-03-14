@@ -35,7 +35,7 @@
           <div class="footer__address">
             <p>〒111-0053<br>東京都台東区浅草橋1-1-11 戸谷第3ビル6階</p>
           </div>
-          <div class="footer__copy"><p>&copy; FREEDGE Inc. All rights reserved.</p></div>
+          <div class="footer__policy"><p><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">個人情報保護方針</a></p></div>
         </div>
       
         <nav class="footer__nav">
@@ -51,6 +51,7 @@
           ?>
         </nav>
       </div>
+      <div class="footer__copy"><p>&copy; FREEDGE Inc. All rights reserved.</p></div>
     </div>
   </div>
 </footer>

@@ -12,6 +12,8 @@
           echo 'services';
         } elseif (is_page('contact')) {
           echo 'contact';
+        } elseif (is_page('privacy-policy')) {
+          echo 'privacy policy';
         } else {
           the_title();
         }
@@ -27,6 +29,10 @@
           echo '事業内容';
         } elseif (is_page('contact')) {
           echo 'お問い合わせ';
+        } elseif (is_page('privacy-policy')) {
+          echo '個人情報保護方針';
+        } else {
+          echo '企業理念';
         }
         ?>
       </p>

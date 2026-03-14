@@ -103,7 +103,7 @@
 }
 
 .footer__copy {
-  margin-top: auto;
+  margin-top: rem(40);
 }
 
 .footer__copy p {
@@ -111,9 +111,26 @@
   font-family: $second-font-family;
   letter-spacing: 0.06em;
   line-height: 1;
+  text-align: right;
   @include mq(md) {
     font-size: rem(12);
   }
+}
+.footer__policy {
+  margin-top: auto;
+}
+.footer__policy a {
+  color: $color-white;
+  text-decoration: none;
+  font-size: rem(14);
+  font-family: $second-font-family;
+  letter-spacing: 0.06em;
+  font-weight: $medium;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+.footer__policy a:hover {
+  opacity: 0.7;
 }
 
 

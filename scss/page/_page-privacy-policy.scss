@@ -1,0 +1,71 @@
+@use "../global" as *;
+
+// PRIVACY POLICY（個人情報保護方針）ページ
+
+
+// PRIVACY POLICY セクション
+section.privacy-policy {
+  position: relative;
+  z-index: 1;
+  padding-top: rem(220);
+  padding-bottom: rem(80);
+}
+.privacy-policy__container.container {
+  max-width: calc(1280px + ($padding-pc * 2));
+}
+
+.privacy-policy__title {
+  font-size: rem(48);
+  color: $color-black;
+  margin-bottom: rem(77);
+  text-align: center;
+}
+.privacy-policy__info {
+  text-align: right;
+}
+
+// PRIVACY HANDLING（個人情報の取り扱い）セクション
+section.privacy-handling {
+  padding-top: 0;
+  padding-bottom: rem(195);
+}
+.privacy-handling__container.container {
+  max-width: calc(1280px + ($padding-pc * 2));
+}
+.privacy-handling__title {
+  font-size: rem(48);
+  color: $color-black;
+  text-align: center;
+  margin-bottom: rem(32); 
+  line-height: 1;
+}
+.privacy-handling__note {
+  font-size: rem(20);
+  font-weight: $bold;
+  text-align: center;
+  margin-bottom: rem(72);
+  line-height: 1;
+}
+
+@include mq(md) {
+  section.privacy-policy {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+  }
+  .privacy-policy__title {
+    font-size: rem(28);
+    margin-bottom: rem(40);
+  }
+  section.privacy-handling {
+    padding-top: 0;
+    padding-bottom: rem(80);
+  }
+  .privacy-handling__title {
+    font-size: rem(28);
+    margin-bottom: rem(20);
+  }
+  .privacy-handling__note {
+    font-size: rem(16);
+    margin-bottom: rem(40);
+  }
+}

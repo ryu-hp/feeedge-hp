@@ -12,6 +12,10 @@
   padding-bottom: rem(194);
 }
 
+.mission__catchphrase.section-catchphrase {
+  line-height: calc(74 / 48);
+}
+
 .mission__text {
   font-size: rem(24);
   line-height: calc(50 / 24);
@@ -40,6 +44,10 @@
   margin-bottom: rem(58);
 }
 
+.vision__catchphrase.section-catchphrase {
+  line-height: calc(74 / 48);
+}
+
 .vision__text {
   font-size: rem(24);
   line-height: calc(50 / 24);
@@ -47,7 +55,7 @@
     font-size: rem(18);
   }
 }
-.vision__text:not(:last-child) {
+.vision__text p:not(:last-child) {
   margin-bottom: rem(24);
 }
 

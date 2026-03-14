@@ -55,7 +55,7 @@
 
 .fv__content {
   position: absolute;
-  width: calc(1051 / 1920 * 100%);
+  width: calc(1064 / 1920 * 100%);
   left: calc(88 / 1920 * 100%);
   bottom: calc(93 / 1080 * 100%);
 }
@@ -67,7 +67,7 @@
   letter-spacing: 0.04em;
   position: absolute;
   bottom: calc(74 / 311 * 100%);
-  right: calc(80 / 1051 * 100%);
+  right: calc(-244 / 1064 * 100%);
   color: $color-white;
 }
 
@@ -96,7 +96,7 @@
     gap: rem(20);
   }
   .fv__subtitle {
-    width: calc(243 / 393 * 100vw);
+    width: 100%;
   }
   .fv__title {
     position: static;
