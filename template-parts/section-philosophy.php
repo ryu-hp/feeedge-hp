@@ -18,8 +18,8 @@
             </p>
             <p class="philosophy__description">
               ITの力を駆使してお客様、社会をより自由に、<br>
-              またそれを支えるエンジニアにより自由な選択を。<br>
-              FREEDGEは関わる人が今よりも自由になれる架け橋として、<br>
+              またそれを支えるエンジニアに<br class="only-sp">より自由な選択を。<br>
+              FREEDGEは関わる人が今よりも自由になれる架け橋として、<br class="only-pc">
               情報社会の発展に貢献します。
             </p>
             <div class="philosophy__button">

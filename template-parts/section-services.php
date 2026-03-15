@@ -17,7 +17,7 @@
               <p class="services__description">
                 FREEDGEは、お客様一人ひとりの課題に寄り添い、<br>
                 システム開発からインフラ構築、オフィス環境まで幅広くサポートしています。 <br>
-                3つの事業で、社会の“自由”をともにつくります。
+                3つの事業で、社会の“自由”をともに<br class="only-sp">つくります。
               </p>
             </div>
             <div class="services__top-image">
