@@ -1125,7 +1125,7 @@ body.menu-open .mobile-menu {
 .fv__container {
   position: relative;
   width: 100%;
-  max-width: 1480px;
+  max-width: 1920px;
   z-index: 2;
 }
 
@@ -1145,6 +1145,10 @@ body.menu-open .mobile-menu {
   bottom: 23.7942122186%;
   right: -22.9323308271%;
   color: #ffffff;
+}
+
+.fv__title span {
+  letter-spacing: -0.34em;
 }
 
 .fv__subtitle {
@@ -1183,6 +1187,11 @@ body.menu-open .mobile-menu {
   .fv__title {
     position: static;
     font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .fv__title {
+    font-size: 28px;
   }
 }
 .philosophy {
@@ -5685,4 +5694,14 @@ section {
 
 .font-second {
   font-family: "Barlow Condensed", sans-serif;
+}
+
+.br-pc {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .br-pc {
+    display: block;
+  }
 }

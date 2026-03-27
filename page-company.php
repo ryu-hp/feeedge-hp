@@ -33,13 +33,38 @@ get_header();
               </div>
             </div>
             <div class="message__right">
-              <p class="message__description">
-                情報社会といわれる現代では、スマートフォンを始めいたるところにITが活用され、数年前まではできなかったことができるようになり、人々はより多くの選択肢を持つことで、より自由な生活を<br class="only-sp">手にしています。<br><br>
-                私自身、通信キャリアでエンジニアとして、様々な業界のお客様へITソリューションの提案や導入を行ってきた中で、今後もITによって社会が発展してくことを確信しています。<br><br>
-                当社は無限の可能性を持つITの力を駆使し、ひとりひとりに今よりも多くの自由を提供します。一方、経済産業省の発表では、2030年には最大で約79万人のIT人材が不足すると報告されています。<br><br>
-                そのため、ひとりでも多くの方にエンジニアになりたい、続けたいと思っていただけるよう、「エンジニアをもっと自由に」をスローガンに事業活動に<br class="only-sp">専念してまいります。<br>
-                すべての人にとっての自由の架け橋となる企業を目指します。
-              </p>
+              <div class="message__description">
+                <?php
+                // CEO メッセージカスタム投稿を取得
+                $ceo_message_args = array(
+                  'post_type' => 'ceo_message',
+                  'posts_per_page' => 1,
+                  'orderby' => 'date',
+                  'order' => 'DESC'
+                );
+                $ceo_message_query = new WP_Query($ceo_message_args);
+                
+                if ($ceo_message_query->have_posts()) :
+                  while ($ceo_message_query->have_posts()) : $ceo_message_query->the_post();
+                    // 投稿内容を取得して表示
+                    the_content();
+                  endwhile;
+                  wp_reset_postdata();
+                else :
+                  // フォールバック：カスタム投稿がない場合のデフォルトテキスト
+                ?>
+                <p>
+
+                  情報社会といわれる現代では、スマートフォンを始めいたるところにITが活用され、数年前まではできなかったことができるようになり、人々はより多くの選択肢を持つことで、より自由な生活を<br class="only-sp">手にしています。<br><br>
+                  私自身、通信キャリアでエンジニアとして、様々な業界のお客様へITソリューションの提案や導入を行ってきた中で、今後もITによって社会が発展してくことを確信しています。<br><br>
+                  当社は無限の可能性を持つITの力を駆使し、ひとりひとりに今よりも多くの自由を提供します。一方、経済産業省の発表では、2030年には最大で約79万人のIT人材が不足すると報告されています。<br><br>
+                  そのため、ひとりでも多くの方にエンジニアになりたい、続けたいと思っていただけるよう、「エンジニアをもっと自由に」をスローガンに事業活動に<br class="only-sp">専念してまいります。<br>
+                  すべての人にとっての自由の架け橋となる企業を目指します。
+                </p>
+                <?php
+                endif;
+                ?>
+              </div>
               <div class="message__ceo-name">
                 <span class="message__ceo-name--position">代表取締役</span>
                 <span class="message__ceo-name--main"><img src="<?php echo get_template_directory_uri(); ?>/image/ceo-name.webp" alt="松原充芳"></span>

@@ -15,8 +15,8 @@
                 <span><span class="color-theme">３つ</span>のソリューション</span>
               </p>
               <p class="services__description">
-                FREEDGEは、お客様一人ひとりの課題に寄り添い、<br>
-                システム開発からインフラ構築、オフィス環境まで幅広くサポートしています。 <br>
+                FREEDGEは、お客様一人ひとりの課題に寄り添い、<br class="br-pc">
+                システム開発からインフラ構築、オフィス環境まで幅広くサポートしています。 <br class="br-pc">
                 3つの事業で、社会の“自由”をともに<br class="only-sp">つくります。
               </p>
             </div>

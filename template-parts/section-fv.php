@@ -9,7 +9,7 @@
   </div>
   <div class="fv__container">
     <div class="fv__content">
-      <h1 class="fv__title">デジタルで広がる、自由な未来</h1>
+      <h1 class="fv__title">デジタルでひろがる<span>、</span>自由な未来</h1>
       <p class="fv__subtitle">
         <picture>
           <source srcset="<?php echo get_template_directory_uri(); ?>/image/copy-sp-03.webp" media="(max-width: 767px)" type="image/webp">
